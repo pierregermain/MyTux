@@ -25,7 +25,7 @@ fi
 setxkbmap us -variant altgr-intl
 
 # Basename PWD in xfce4-terminal title
-export PROMPT_COMMAND='echo -ne "\033]0;* ${PWD##*/} *\007"'
+#export PROMPT_COMMAND='echo -ne "\033]0;* ${PWD##*/} *\007"'
 
 # Make the terminal vi like
 #set -o vi
@@ -45,7 +45,8 @@ export MyData_Bck=$MyUsbMnt/DATA_Bck
 export MyMuz=$MyUsbMnt/MUZ
 export MyMuz_Bck=$MyUsbMnt/MUZ_Bck
 export MyHome_Bck=$MyUsbMnt/HOME_Bck
-export MyLinux_Bck=$MyUsbMnt/LIN_Bck
+export MyLin_Bck=$MyUsbMnt/LIN_Bck
+export MyLin2_Bck=$MyUsbMnt/LIN2_Bck
 
 # My Aliases
 source $HOME/Scripts/shell_aliases
@@ -53,6 +54,7 @@ source $MyData/PIERRE/Scripts/shell_aliases
 
 # My Scripts
 export PATH=$PATH:$HOME/Scripts
+export PATH=$PATH:$MyData/PIERRE/Scripts
 export PATH=$PATH:$MyData/PIERRE/Scripts/DevOps
 
 # History
