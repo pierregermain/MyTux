@@ -54,6 +54,7 @@ source $MyData/PIERRE/Scripts/shell_aliases
 
 # My Scripts
 export PATH=$PATH:$HOME/Scripts
+export PATH=$PATH:$HOME/Scripts/backup
 export PATH=$PATH:$MyData/PIERRE/Scripts
 export PATH=$PATH:$MyData/PIERRE/Scripts/DevOps
 
