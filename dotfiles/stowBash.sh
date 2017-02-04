@@ -1,1 +1,1 @@
-stow -t ~ bash
+stow -v -t ~ bash

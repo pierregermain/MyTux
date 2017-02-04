@@ -1,1 +1,1 @@
-stow --adopt -t ~ bash
+stow -v --adopt -t ~ bash
