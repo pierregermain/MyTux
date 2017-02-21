@@ -15,7 +15,8 @@ alias e='exit'
 alias a='alias'
 alias h='history'
 alias c='clear'
-alias g='grep'
+alias g='grep -i'
+alias ag='alias|grep -i '
 alias ..='cd ..'
 
 #History
@@ -42,7 +43,7 @@ alias setBackgroundLast='sh .fehbg &'
 
 #Colors are nice
 alias ls='ls --color=auto -h'
-alias diff='colordiff'
+alias diff='diff --color'
 alias dmesg='dmesg --color'
 alias grep='grep --color'
 alias grepi='grep -i --color'
@@ -80,7 +81,7 @@ alias pacmanPackageInstall='pacman -S'
 alias pacmanPackageRemove='pacman -R'
 alias pacmanPackageRemoveAll='pacman -Rs'
 
-alias pacmanUpdateSystem='pacman -Syu'
+alias pacmanUpdateSystem='sudo pacman -Syu'
 
 # Old Commands
 alias pacmanListPackages='pacman -Q'
@@ -324,9 +325,10 @@ alias dockerDeletePreferences='sudo rm -R /var/lib/docker'
 
 #Drupal
 
-alias apacheCd='cd /srv/http'
+alias apacheWebdir='cd /srv/http'
 alias apacheConfig='sudo vi /etc/httpd/conf/httpd.conf'
-alias apacheStart='sudo systemctl restart httpd.service'
+alias apacheStatus='sudo systemctl status httpd'
+alias apacheStart='sudo systemctl start httpd.service'
 alias apacheRestart='sudo systemctl restart httpd'
 alias apacheStop='sudo systemctl stop httpd'
 alias apacheErrorLog='cat /var/log/httpd/error_log'
