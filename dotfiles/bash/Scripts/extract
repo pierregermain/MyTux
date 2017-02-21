@@ -4,7 +4,7 @@
 echo $1
 
 # Display usage if no parameters given
-if [[ -z "$@" ]]; then
+if [ -z "$@" ]; then
 echo " ${0##*/} <archive> - extract common file formats)"
 exit
 fi
