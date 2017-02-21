@@ -5,6 +5,12 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Use bash-completion, if available
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
+
+#Drupal Autocompletion
+source "$HOME/.console/console.rc" 2>/dev/null
 
 # Commands to be executed before the prompt is displayed
 # Save current working dir
@@ -28,7 +34,7 @@ setxkbmap us -variant altgr-intl
 #export PROMPT_COMMAND='echo -ne "\033]0;* ${PWD##*/} *\007"'
 
 # Make the terminal vi like
-#set -o vi
+set -o vi
 
 # My Maquina
 export MyMaquina=`hostname`
@@ -63,5 +69,5 @@ HISTSIZE=4999
 HISTFILESIZE=9999
 
 # EDITOR
-export VISUAL=vi
+export VISUAL=vim
 export EDITOR="$VISUAL"
