@@ -73,5 +73,5 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 
 #COMPOSER
-export COMPOSER_HOME='/home/pierre/composer/home'
-export COMPOSER_CACHE='/home/pierre/composer/cache'
+export COMPOSER_HOME=$HOME/composer/home
+export COMPOSER_CACHE=$HOME/composer/cache
