@@ -71,3 +71,7 @@ HISTFILESIZE=9999
 # EDITOR
 export VISUAL=vim
 export EDITOR="$VISUAL"
+
+#COMPOSER
+export COMPOSER_HOME=$HOME/composer/home
+export COMPOSER_CACHE=$HOME/composer/cache
