@@ -3,14 +3,15 @@
 #
 
 # If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+case $- in
+    *i*) ;;
+      *) return;;
+esac
 
 # Use bash-completion, if available
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
 
-#Drupal Autocompletion
-source "$HOME/.console/console.rc" 2>/dev/null
 
 # Commands to be executed before the prompt is displayed
 # Save current working dir
@@ -21,7 +22,7 @@ source "$HOME/.console/console.rc" 2>/dev/null
 # Prompt
 # If id command returns zero, you have root access.
 if [ $(id -u) -eq 0 ];
-then # you are root, set red colour prompt
+then # you are root, set red color prompt
   PS1="\e[0;31m[\u@\h \W]\$ \e[m "
 else # normal
   PS1="[\W] "
@@ -55,8 +56,12 @@ export MyLin_Bck=$MyUsbMnt/LIN_Bck
 export MyLin2_Bck=$MyUsbMnt/LIN2_Bck
 
 # My Aliases
-source $HOME/Scripts/shell_aliases
-source $MyData/PIERRE/Scripts/shell_aliases
+if [ -f ~/Scripts/shell_aliases ]; then
+  source ~/Scripts/shell_aliases
+fi
+if [ -f $MyData/PIERRE/Scripts/shell_aliases ]; then
+  source $MyData/PIERRE/Scripts/shell_aliases
+fi
 
 # My Scripts
 export PATH=$PATH:$HOME/Scripts
@@ -65,8 +70,13 @@ export PATH=$PATH:$MyData/PIERRE/Scripts
 export PATH=$PATH:$MyData/PIERRE/Scripts/DevOps
 
 # History
-HISTSIZE=4999
+HISTSIZE=9999
 HISTFILESIZE=9999
+HISTCONTROL=ignoreboth
+shopt -s histappend
+
+#WINDOW SIZE
+shopt -s checkwinsize
 
 # EDITOR
 export VISUAL=vim
@@ -75,3 +85,6 @@ export EDITOR="$VISUAL"
 #COMPOSER
 export COMPOSER_HOME=$HOME/composer/home
 export COMPOSER_CACHE=$HOME/composer/cache
+
+#Drupal Autocompletion
+source "$HOME/.console/console.rc" 2>/dev/null
