@@ -64,6 +64,9 @@ alias keyboardXmodmapModify='vi ~/.Xmodmap'
 alias kbUp="sudo keyboardBrightness 10"
 alias kbDown="sudo keyboardBrightness -10"
 
+alias displayBrightnessS="xrandr --output eDP-1 --brightness +0.4"
+alias displayBrightnessM="xrandr --output eDP-1 --brightness +0.6"
+alias displayBrightnessL="xrandr --output eDP-1 --brightness +0.8"
 # XORG
 
 alias startxfce4='startxfce4 >.logStartXfce4.log'
