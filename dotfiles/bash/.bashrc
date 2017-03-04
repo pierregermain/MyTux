@@ -59,8 +59,8 @@ export MyLin2_Bck=$MyUsbMnt/LIN2_Bck
 if [ -f ~/Scripts/shell_aliases ]; then
   source ~/Scripts/shell_aliases
 fi
-if [ -f $MyData/PIERRE/Scripts/shell_aliases ]; then
-  source $MyData/PIERRE/Scripts/shell_aliases
+if [ -f $HOME/PIERRE/Scripts/shell_aliases ]; then
+  source $HOME/PIERRE/Scripts/shell_aliases
 fi
 
 # My Scripts
