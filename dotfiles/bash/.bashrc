@@ -85,6 +85,10 @@ export EDITOR="$VISUAL"
 #COMPOSER
 export COMPOSER_HOME=$HOME/composer/home
 export COMPOSER_CACHE=$HOME/composer/cache
+#alias composer='php /home/pierre/composer.phar'
+
+# PANTHEON
+alias terminus=/home/pierre/vendor/bin/terminus
 
 #Drupal Autocompletion
 source "$HOME/.console/console.rc" 2>/dev/null
