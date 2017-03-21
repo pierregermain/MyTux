@@ -1,0 +1,225 @@
+[header_maps]
+
+[rename]
+ascii = false
+diacriticals = false
+lowercase = false
+spaces = false
+windows = true
+
+[settings]
+bayesian_rating_factor = 0.0
+columns = ~#track,~#bitrate,~#length,~artist~title,artist,album,bpm,genre,~rating
+	
+default_rating = 0.0
+disable_hints = false
+eager_search = true
+jump = true
+rating_symbol_blank = ☆
+rating_symbol_full = ★
+ratings = 4
+repeat = False
+scan = /run/media/pierre/MUZ/MUZ/Pierre Germain (VA):/run/media/pierre/MUZ/MUZ/MP3:/run/media/pierre/MUZ/MUZ/FLAC:/run/media/pierre/MUZ/MUZ/RADIO:/run/media/pierre/MUZ/MUZ/LA_MALETA/PACHANGA
+search_tags = 
+
+[__config__]
+version = 0
+
+[plugins]
+active_plugins = CustomCommands
+	FilterAll
+	RemoveID3TLEN
+	filterbrowser
+	follow
+	Remove Playlist Duplicates
+	Browse Folders
+	MusicBrainz lookup
+	track_repeat
+	AcoustidSearch
+	Regex Substitution
+	refresh-songs
+	Shuffle Playlist
+	Theme Switcher
+	Download Album art
+	Browse Files
+	Duplicates
+	musicbrainz-cover
+	Export to HTML
+	queue
+	SeekBar
+	Download Album Art
+	Playlist Export
+	Force Write
+animosd_bcolor = (0.0, 0.0, 0.0, 0.2)
+animosd_fill = (0.25, 0.25, 0.25, 0.5)
+animosd_monitor = 0
+animosd_outline = (-1.0, 0.0, 0.0, 0.2)
+animosd_shadow = (-1.0, 0.0, 0.0, 0.1)
+animosd_text = (0.9, 0.9, 0.9, 0.0)
+brainz_albumartist = true
+brainz_artist_sort = true
+brainz_labelid = true
+brainz_split_disc = true
+brainz_split_feat = true
+brainz_standard = true
+brainz_year_only = true
+cover_edit = false
+cover_edit_cmd = gimp
+cover_engine_amazon = True
+cover_engine_discogs = True
+cover_fit = true
+cover_fn = cover.jpg
+default_max_plugin_invocations = 30
+duplicates_case_insensitive = true
+duplicates_key_expression = ~artist~title~version
+duplicates_remove_diacritics = true
+duplicates_remove_punctuation = true
+duplicates_remove_whitespace = true
+equalizer_levels = -16.7,-15.0,-0.2,0.491208791209,5.4,5.9,6.7,2.5,0.9,-2.3
+icon_modifier_swap = True
+icon_tooltip = <album|<album~discnumber~part~tracknumber~title~version>|<artist~title~version>>
+icon_window_hide = True
+icon_window_visible = true
+notify_show_notifications = all
+pitch_pitch = 1.0
+pitch_rate = 1.0
+pitch_tempo = 1.0
+quodlibet.fake.plugins.gajim_status_accounts = 
+quodlibet.fake.plugins.gajim_status_pattern = <artist> - <title>
+quodlibet.fake.plugins.gajim_status_paused = True
+quodlibet.fake.plugins.gajim_status_statuses = online chat
+quodlibet.fake.plugins.wikipedia = en
+quodlibet.fake.plugins.write_cover = /home/pierre/.quodlibet/current.cover
+randomalbum_use_weights = 0
+scrobbler_scrobbler_offline = False
+scrobbler_service = Last.fm
+squeezebox_debug = False
+theme switcher_prefer_dark = false
+theme switcher_theme = Mint-X
+titlecase_allow_all_caps = True
+titlecase_human_title_case = True
+track_repeat_play_each = 3
+
+[library]
+exclude = 
+refresh_on_start = false
+
+[player]
+backend = gstbe
+fallback_gain = 0.0
+gst_buffer = 1.5
+gst_device = 
+gst_disable_gapless = false
+gst_pipeline = 
+pre_amp_gain = 0.0
+replaygain = true
+time_remaining = false
+
+[tagsfrompath]
+add = false
+split = true
+titlecase = false
+underscores = false
+
+[browsers]
+album_covers = true
+album_sort = 2
+album_substrings = true
+albumlist_pos = 0.248234655079
+albums = 
+audiofeeds_pos = 0.399782726779
+background = !genre="(NO)"
+collection = 9
+collection_headers = ~year 0
+collectionbrowser_pos = 0.273714699493
+cover_size = -1
+filesystem = 
+filesystem_pos = 0.132291666667
+internetradio_pos = 0.39796495195
+mediadevices_pos = 0.398696360674
+pane_selection = 0	(Error)	(error)	(getme)	(Capoeira)	(break) Ea/Synfo	(efectos)	(buyme) H/DnB/Tr/Vc/Classic	(error) D/Vc	(games) Rk/Instr	(games) Jz	(base)	(error) Intro a un concierto	(error) Bt/2x4/Chill/Gr/AcJ	(demasiado corto)	(break)	(games)	(games) Mario Rk/Instr	(games) Mario	(Error ???)	.
+pane_wide_mode = true
+panedbrowser_pos = 0.147181628392
+panes = genre
+playlist = NEM PRESENTACION INICIO
+playlists_pos = 0.277777777778
+playlistsbrowser_pos = 0.156770833333
+query_text = 
+radio = college
+rating_click = true
+rating_confirm_multiple = true
+rating_hotkeys = true
+search_limit = false
+
+[albumart]
+filename = folder.jpg
+force_filename = false
+prefer_embedded = false
+round = true
+
+[memory]
+browser = SearchBar
+browser_filesystem_maximized = 0
+browser_filesystem_position = 0 613
+browser_filesystem_size_ = 1628 446
+browser_panedbrowser_maximized = 0
+browser_panedbrowser_position = 0 18
+browser_panedbrowser_size_ = 1429 1041
+browser_playlists_maximized = 0
+browser_playlists_position = 874 34
+browser_playlists_size_ = 802 995
+browser_playlistsbrowser_maximized = 0
+browser_playlistsbrowser_position = 0 34
+browser_playlistsbrowser_size_ = 1416 1025
+browser_searchbar_maximized = 0
+browser_searchbar_position = 960 18
+browser_searchbar_size_ = 956 1041
+column_expands = ~artist~title,1,artist,1,album,1,bpm,1,genre,1
+	
+column_widths = ~artist~title,224,artist,161,album,195,bpm,-1,genre,145
+	
+exfalso_maximized = 0
+exfalso_position = 560 34
+exfalso_size_ = 556 995
+open_browsers = 
+order = inorder
+order_shuffle = shuffle
+plugin_prefs_maximized = 0
+plugin_prefs_position = 610 262
+plugin_prefs_size_ = 714 625
+plugin_selection = Automatic library update
+prefs_page = tagging
+queue = True
+queue_expanded = True
+queue_position = 0.605804111245
+quodlibet_information_maximized = 0
+quodlibet_information_position = 278 224
+quodlibet_information_size_ = 593 580
+quodlibet_last_active_version = 3.8.1
+quodlibet_maximized = 4
+quodlibet_position = 0 18
+quodlibet_properties_maximized = 0
+quodlibet_properties_pos = 0.324137931034
+quodlibet_properties_position = 205 198
+quodlibet_properties_size_ = 1506 645
+quodlibet_properties_size_single = 807 429
+quodlibet_size_ = 1916 1041
+seek = 15123
+shuffle = False
+shufflequeue = true
+song = /run/media/pierre/MUZ/MUZ/MP3/HOUSE MINIMAL/Minimal TPB/Mixed/Superlongevity 1 & 2/Superlongevity 1/06 No Milk Today.mp3
+songlist = True
+sortby = 0genre
+	
+volume = 0.342995513936
+
+[editing]
+alltags = true
+auto_save_changes = false
+default_tags = 
+human_title_case = true
+id3encoding = 
+save_email = rating@besutra.com
+save_to_songs = true
+split_on = / & ,
+

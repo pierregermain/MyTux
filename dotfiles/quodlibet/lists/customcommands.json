@@ -1,0 +1,10 @@
+{
+    "Browse folders (Thunar)": {
+        "name": "Browse folders (Thunar)", 
+        "pattern": "<~dirname>", 
+        "max_args": 50, 
+        "command": "thunar", 
+        "unique": true, 
+        "parameter": ""
+    }
+}

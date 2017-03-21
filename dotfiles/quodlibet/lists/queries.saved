@@ -1,0 +1,74 @@
+|(genre = /.*\/Rk.*/,genre = /.*\/Rc.*/)
+Rc Rk (ROCK)
+|(genre = /.*\/Ea$/,genre = /^Ea\/.*/,genre = /.*\/Ea\/.*/)
+*Ea*
+|(genre = /.*\/HH$/,genre = /^HH\/.*/,genre = /.*\/HH\/.*/)
+*HH* (Hip Hop)
+|(genre = /.*\/H$/,genre = /^H\/.*/,genre = /.*\/H\/.*/)
+.*H.* (HOUSE)
+genre = /^D\/.*/
+D/ (DANCE)
+genre = /^Tc\/.*/
+Tc/ (TECHNO)
+genre = /^H\/.*/
+H/ (HOUSE)
+genre = /^Bt\/.*/
+Bt/ (BEATS)
+genre = /^¬Bt\/.*/
+¬Bt
+~dirname = /media\/pierre\/MUZ\/MUZ\/MP3\/40\ Years\ of\ Hits\ From\ a\ Funky\ House\ Perspective.*\/.*/
+40 YEARS
+|(~dirname = /media\/pierre\/MUZ\/MUZ\/MP3\/80s\/.*/,~dirname = /media\/pierre\/MUZ\/MUZ\/FLAC\/80s\/.*/)
+80s
+|(~dirname = /media\/pierre\/MUZ\/MUZ\/MP3\/ACOUSTIC\/.*/,~dirname = /media\/pierre\/MUZ\/MUZ\/FLAC\/ACOUSTIC\/.*/)
+ACOUSTIC
+|(~dirname = /media\/pierre\/MUZ\/MUZ\/MP3\/ACID\ JAZZ\/.*/,~dirname = /media\/pierre\/MUZ\/MUZ\/FLAC\/ACID\ JAZZ\/.*/)
+ACID JAZZ
+|(~dirname = /media\/pierre\/MUZ\/MUZ\/MP3\/REGGAE\/.*/,~dirname = /media\/pierre\/MUZ\/MUZ\/FLAC\/REGGAE\/.*/)
+REGGAE
+|(~dirname = /media\/pierre\/MUZ\/MUZ\/MP3\/DUB\/.*/,~dirname = /media\/pierre\/MUZ\/MUZ\/FLAC\/DUB\/.*/)
+DUB
+|(~dirname = /media\/pierre\/MUZ\/MUZ\/MP3\/BEATS\/.*/,~dirname = /media\/pierre\/MUZ\/MUZ\/FLAC\/BEATS\/.*/)
+BEATS
+|(~dirname = /media\/pierre\/MUZ\/MUZ\/MP3\/CHILL\/.*/,~dirname = /media\/pierre\/MUZ\/MUZ\/FLAC\/CHILL\/.*/)
+CHILL
+|(~dirname = /media\/pierre\/MUZ\/MUZ\/MP3\/HIP\ HOP.*/,~dirname = /media\/pierre\/MUZ\/MUZ\/FLAC\/HIP\ HOP.*/)
+HIP HOP
+|(~dirname = /media\/pierre\/MUZ\/MUZ\/MP3\/DISCO\/.*/,~dirname = /media\/pierre\/MUZ\/MUZ\/FLAC\/DISCO\/.*/)
+DISCO
+|(~dirname = /media\/pierre\/MUZ\/MUZ\/MP3\/FUNK\/.*/,~dirname = /media\/pierre\/MUZ\/MUZ\/FLAC\/FUNK\/.*/)
+FUNK
+|(~dirname = /media\/pierre\/MUZ\/MUZ\/MP3\/FUNKY\/.*/,~dirname = /media\/pierre\/MUZ\/MUZ\/FLAC\/FUNKY\/.*/)
+FUNKY
+|(~dirname = /media\/pierre\/MUZ\/MUZ\/MP3\/ROCK.*/,~dirname = /media\/pierre\/MUZ\/MUZ\/FLAC\/ROCK.*/)
+ROCK
+|(~dirname = /media\/pierre\/MUZ\/MUZ\/MP3\/HOUSE.*\/.*/,~dirname = /media\/pierre\/MUZ\/MUZ\/FLAC\/HOUSE.*\/.*/)
+HOUSE
+|(~dirname = /media\/pierre\/MUZ\/MUZ\/MP3\/DANCE\/.*/,~dirname = /media\/pierre\/MUZ\/MUZ\/FLAC\/DANCE\/.*/)
+DANCE
+|(~dirname = /media\/pierre\/MUZ\/MUZ\/MP3\/BEATPORT\/.*/,~dirname = /media\/pierre\/MUZ\/MUZ\/FLAC\/BEATPORT\/.*/)
+BEATPORT
+|(~dirname = /media\/pierre\/MUZ\/MUZ\/MP3\/TECHNO\/.*/,~dirname = /media\/pierre\/MUZ\/MUZ\/FLAC\/TECHNO\/.*/)
+TECHNO
+|(~dirname = /media\/pierre\/MUZ\/MUZ\/MP3\/BIGBEAT\/.*/,~dirname = /media\/pierre\/MUZ\/MUZ\/FLAC\/BIGBEAT\/.*/)
+BIG BEAT
+|(~dirname = /media\/pierre\/MUZ\/MUZ\/MP3\/ELECTRONICA\/.*/,~dirname = /media\/pierre\/MUZ\/MUZ\/FLAC\/ELECTRONICA\/.*/)
+ELECTRONICA
+|(~dirname = /media\/pierre\/MUZ\/MUZ\/MP3\/DNB\/.*/,~dirname = /media\/pierre\/MUZ\/MUZ\/FLAC\/DNB\/.*/)
+DNB
+|(~dirname = /media\/pierre\/MUZ\/MUZ\/MP3\/BRAZIL\/.*/,~dirname = /media\/pierre\/MUZ\/MUZ\/FLAC\/BRAZIL\/.*/)
+BRAZIL
+~dirname = /media\/pierre\/MUZ\/MUZ\/LA_MALETA\/PACHANGA\/.*/
+PACHANGA
+|(~dirname = /media\/pierre\/MUZ\/MUZ\/MP3\/AFRO\/.*/,~dirname = /media\/pierre\/MUZ\/MUZ\/FLAC\/AFRO\/.*/)
+AFRO
+|(~dirname = /media\/pierre\/MUZ\/MUZ\/MP3\/TRIP HOP\/.*/,~dirname = /media\/pierre\/MUZ\/MUZ\/FLAC\/TRIP HOP\/.*/)
+TRIP HOP
+&(|(~dirname = /media\/pierre\/MUZ\/MUZ\/MP3\/HIP\ HOP.*/,~dirname = /media\/pierre\/MUZ\/MUZ\/FLAC\/HIP\ HOP.*/),~artist~title~album~genre=/.*/)
+Ejemplo AND y OR
+&(#(rating =0.75),~genre~people~album=//)
+(***)
+&(#(bitrate >=300))
+Bitrate > 300
+&(#(bitrate <=159),#(rating > 0.15))
+Comprobar estas

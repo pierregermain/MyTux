@@ -1,0 +1,4 @@
+<artist> - <album> - <tracknumber> <title>
+<artist> - <album> - <tracknumber> - <title>
+/path/<artist> - <album>/<tracknumber>. <title>
+<tracknumber>. <title>
