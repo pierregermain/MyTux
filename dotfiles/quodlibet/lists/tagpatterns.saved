@@ -1,0 +1,6 @@
+<tracknumber>-<artist> - <title>
+<tracknumber>_<artist>_-_<title>
+<tracknumber>_<artist> - <title>
+<tracknumber>.<artist> - <title>
+(<date>)<artist><album>/<comment><tracknumber> - <title>
+date - artist - album - comment - track - title
