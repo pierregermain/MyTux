@@ -374,6 +374,8 @@ alias sshUserIp='ssh $1@$2'
 #APPS & UTILS
 #############
 
+#Battery
+alias seeBattery='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
 
 #Binary To Hexadecimal
 
@@ -481,6 +483,11 @@ alias ql4='quodlibet --set-rating 1.00'
 
 alias qlg='quodlibetSetGenre.sh'
 alias qlb='quodlibetSetBpm.sh'
+alias qla='qlg&&qlb'
+alias qla1='qla&&ql1'
+alias qla2='qla&&ql2'
+alias qla3='qla&&ql3'
+alias qla4='qla&&ql4'
 
 alias qlPlayPause28='sleep 28m;quodlibet --play-pause'
 alias qlPlayPause22='sleep 22m;quodlibet --play-pause'
