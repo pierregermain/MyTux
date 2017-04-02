@@ -143,6 +143,7 @@ alias aircrackInjectionTest='sudo aireplay-ng -9 wlan0'
 alias firewallList='sudo ufw app list'
 alias firewallInfo='sudo ufw app info $1'
 alias firewallAllowIn='sudo ufw allow in $1'
+alias w='w;echo;who -u'
 
 ########
 #SYSTEM
@@ -492,5 +493,10 @@ alias qla4='qla&&ql4'
 alias qlPlayPause28='sleep 28m;quodlibet --play-pause'
 alias qlPlayPause22='sleep 22m;quodlibet --play-pause'
 alias qlPlayPause16='sleep 16m;quodlibet --play-pause'
+
+alias qli='quodlibetInfo.sh'
+alias qln='quodlibet --next && qli'
+alias qlp='quodlibet --previous && qli'
+alias qls='quodlibet --play-pause'
 
 alias mixxxCdSkin='cd /usr/share/mixxx/skins/'
