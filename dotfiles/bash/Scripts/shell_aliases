@@ -499,4 +499,19 @@ alias qln='quodlibet --next && qli'
 alias qlp='quodlibet --previous && qli'
 alias qls='quodlibet --play-pause'
 
+alias qlP='quodlibet --seek 0:00'
+alias qlQ='quodlibet --seek 0:30'
+alias qlW='quodlibet --seek 1:00'
+alias qlE='quodlibet --seek 1:30'
+alias qlR='quodlibet --seek 2:00'
+alias qlT='quodlibet --seek 2:30'
+alias qlY='quodlibet --seek 3:00'
+alias qlU='quodlibet --seek 5:00'
+alias qlI='quodlibet --seek 7:00'
+alias qlO='quodlibet --seek 0:00'
+
+# Music mocp
+alias mcb="mocSetBpm.sh"
+alias mcg="mocSetGenre.sh"
+
 alias mixxxCdSkin='cd /usr/share/mixxx/skins/'
