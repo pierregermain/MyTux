@@ -2,9 +2,6 @@
 # My Shell Aliases
 #
 
-#Edit this file
-alias viShellAliases='vi ~/Scripts/shell_aliases'
-
 #Ruta/z
 #. $HOME/Scripts/z/z.sh
 
@@ -31,7 +28,7 @@ alias shellsList='chsh -l'
 alias shellSetZsh='chsh -s $(which zsh)'
 alias shellSetBash='chsh -s $(which bash)'
 
-alias functions='declare -f'
+alias seeFunctions='declare -f'
 
 #background image
 alias setBackgroundMax='feh --bg-max'
@@ -64,12 +61,13 @@ alias keyboardXmodmapModify='vi ~/.Xmodmap'
 alias kbUp="sudo keyboardBrightness 10"
 alias kbDown="sudo keyboardBrightness -10"
 
+# Display
+
 alias displayBrightnessS="xrandr --output eDP-1 --brightness +0.4"
 alias displayBrightnessM="xrandr --output eDP-1 --brightness +0.6"
 alias displayBrightnessL="xrandr --output eDP-1 --brightness +0.8"
-# XORG
 
-alias startxfce4='startxfce4 >.logStartXfce4.log'
+# XORG
 alias sx='startx'
 
 #######
@@ -92,7 +90,7 @@ alias pacmanRefreshAfterUpdateMirrors='sudo pacman -Syy'
 alias pacmanRefreshPGPKeys='sudo pacman-key --refresh-keys'
 alias pacmanUpdateMirrorList='/home/pierre/Scripts/pacman/pacmrr'
 alias pacmanClearCacheOfInstalledPackages='sudo pacman -Sc'
-alias pacmanClearCacheALL_USE_WITH_CARE='sudo pacman -Scc'
+alias pacmanClearCacheDANGER='sudo pacman -Scc'
 alias pacmanSearch='pacman -Ss'
 alias pacmanSeeUnnecesaryDependencies='pacman -Qdtq'
 alias pacmanSeePackageOwnedByABin='pacman -Qo'
@@ -133,7 +131,7 @@ alias cww='wwifiDown;sudo wifi-menu net0'
 alias wifiDriver='iw dev'
 alias wifiblocked='rfkill list'
 
-alias aircrackInterfaces='iwconfig'
+alias seeWifiInterfaces='iwconfig'
 alias aircrackStop='sudo airmon-ng stop wlan0; sudo airmon-ng stop wlp3s0'
 alias aircrackStopWlan0='sudo airmon-ng stop wlan0'
 alias aircrackStart='sudo airmon-ng start wlan0'
@@ -143,20 +141,21 @@ alias aircrackInjectionTest='sudo aireplay-ng -9 wlan0'
 alias firewallList='sudo ufw app list'
 alias firewallInfo='sudo ufw app info $1'
 alias firewallAllowIn='sudo ufw allow in $1'
+
 alias w='w;echo;who -u'
 
 ########
 #SYSTEM
 ########
-alias systemBootAnalize='systemd-analyze blame'
+alias seeSystemBootAnalize='systemd-analyze blame'
 
 # Journal Logs
 alias seeJournalVerify='journalctl --verify'
-alias journalDiskUsage='journalctl --disk-usage'
-alias journalModify='sudo vi /etc/systemd/journald.conf'
+alias seeJournalDiskUsage='journalctl --disk-usage'
+alias seeJournalConfig='cat /etc/systemd/journald.conf'
 alias seeJournalLogs='cd /var/log/journal/'
 
-alias seetopCool='htop'
+alias seeProcesses='htop'
 alias seeProcessesToKill='ps aux | grep'
 alias killProcessByName='killall -9'
 
@@ -183,8 +182,8 @@ alias poweroff='sudo poweroff'
 alias i3lock='i3lock -c 111111 -d'
 
 #Edit Kernel Mode Settings
-alias viBoot='vi /boot/refind_linux.conf'
-alias viKernelModeSettings='vi /etc/mkinitcpio.conf'
+alias seeBoot='cat /boot/refind_linux.conf'
+alias seeKernelModeSettings='cat /etc/mkinitcpio.conf'
 alias regenerateBootImage='sudo mkinitcpio -p linux'
 
 alias seeTemps='sensors'
@@ -198,8 +197,7 @@ alias setTimeYYYY-MM-DD='echo "use asteriscos";timedatectl set-time'
 alias setTimeHH-MM-SS='echo "use asteriscos";timedatectl set-time'
 alias seeXfceConfig='cd ~/.config/xfce4/xfconf/xfce-perchannel-xml/'
 
-alias mouseConfig='xfce4-mouse-settings'
-
+#Touchpad
 alias seeTouchpadList='cd /etc/X11/xorg.conf.d/;cat 50-synaptics.conf;synclient -l'
 alias touchpadSave="synclient -l | sed 's/Parameter settings://;s/ //g' > ~/.synpadSettings"
 alias touchpadChange="synclient"
@@ -207,7 +205,7 @@ alias touchpadLoad='cat ~/.synpadSettings | xargs synclient'
 alias touchpadDaemon='syndaemon -i 1.2 -K'
 alias touchpadDaemonBackground='touchpadDaemon -d'
 
-
+#Fonts
 alias seeFonts='cd /usr/share/fonts'
 alias fontCompile='fc-cache -vf'
 
@@ -252,14 +250,11 @@ alias lsOneColumn="ls -1"
 #}
 alias rmDir='sudo rm -rf'
 alias seePartitions='sudo blkid;lsblk;echo ;lsblk -f;echo ;df -h'
-alias formatMsdos='sudo mkfs.msdos -F 32 /dev/sdc1'
+alias formatMsdosDANGER='sudo mkfs.msdos -F 32 /dev/sdc1'
 alias dir="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//-/g' -e 's/^/ /' -e 's/-/|/'|more"
 
 alias mountTxt='sudo mount /dev/sda4 /media/txt'
 alias mountHFS='sudo mount -o remount,rw,force'
-alias mountMuz='sudo mount /dev/sdb2 /media/muz'
-alias umountMuz='sudo umount muz'
-alias mm='sudo mount media/pierre/MUZ'
 alias mountIPod='ifuse /media/ipod'
 alias mountIPodRoot='ifuse --root /media/ipod'
 alias mountSD='sudo mount /dev/sdc1 /media/sdcard '
@@ -351,26 +346,6 @@ alias mySqlConnectLocalhost='mysql -h localhost -u root -p'
 alias phpMyAdminAccess='sudo vi /etc/webapps/phpmyadmin/.htaccess'
 alias seePhpIni='sudo vim /etc/php/php.ini'
 
-#tomcat
-alias cdTomcatDir='cd /usr/share/tomcat7'
-alias cdTomcatJavaLibsDir='cd /usr/share/java'
-alias cdTomcatConfigDir='cd /etc/tomcat7'
-alias tomcatStart='sudo systemctl start tomcat7'
-alias tomcatStop='sudo systemctl stop tomcat7'
-alias cdTomcatLog='cd /var/log/tomcat7'
-alias cdTomcatWebapps='cd /var/lib/tomcat7/webapps'
-
-#Maven
-alias mavenDependencyTree='mvn dependency:tree -Dverbose'
-alias mavenCompileEclipse='mvn eclipse:eclipse'
-alias mavenInstallEclipse='mvn install'
-alias mavenCleanEclipse='mvn eclipse:clean'
-alias mavenAddMavenClasspathToEclipseWorkspace='mvn -Declipse.workspace=. eclipse:add-maven-repo'
-alias mavenCopyLibs='cp -r /home/pierre/git/mvctest/mvctest/target/SpringSecurityHelloWorld/WEB-INF/lib/* /home/pierre/git/mvctest/mvctest/WebContent/WEB-INF/lib/'
-
-#Ssh
-alias sshUserIp='ssh $1@$2' 
-
 #############
 #APPS & UTILS
 #############
@@ -401,32 +376,13 @@ alias latexMantainTexFiles='fmtutil --all'
 # Menu
 alias seeApplicationsMenu='cd /usr/share/applications'
 
-# Screenshot
-alias screenshooter='xfce4-screenshooter'
-
-# Curl
-alias webBrowserConsole='links'
-
 #AsciiArt
 alias asciiArt='figlet -c'
-#alias asciiArtPutText_From_To='convert -pointsize 72 -fill yellow -draw \'text 50,200 "Texto A Meter"\' Autor.png AutorAAA.png'
 alias asciiFiglet='figlet'
 alias asciiCadubi='cadubi'
 
 #Calc
 alias bc='bc -q ~/.bc'
-
-#Chat
-alias chatIrq='screen;irssi -c freenode'
-alias chatXmpp='profanity'
-
-#Screens
-#To detach a screen use "ctr+a -> d"
-alias screenAtach='screen -rd'
-
-#Skype
-#alias skype='xhost +local: && su skype -c skype'
-alias skypeSandboxed='xhost +local: && sudo -u skype /usr/bin/skype'
 
 #Firefox
 alias firefoxDev='firefox -profilemanager'
@@ -441,8 +397,6 @@ alias openRecent='open recent:///'
 
 #Find
 alias whereAreThoseFuckingFilesOfBin='whereis'
-alias findFilesMuz='find $MyMuz -iname '
-alias findFilesHome='find $HOME -iname '
 alias findAlgo='find . -iname '
 
 #Search
@@ -457,17 +411,11 @@ function grepRecursiveInFiles () { grep -rl "$1" ./; }
 function grepRecursiveInFilesAndReplace () { grep -rl "$1" ./ | xargs sed -i 's/$2//g'; }
 
 
-#Music
+# Music
 alias sedPath="sed 's/.*\/.*\///'" 
 alias sedSpaceAsterisc="sed 's/\ /*/'g"
 alias sedAsterisc="sed s/\"'\"/*/g"
 alias sedSpaceEscaped="sed 's/\ /\\\ /'g"
-
-alias moc='mocp'
-alias mocSleep28='sleep 28m;mocp stop'
-alias mocSleep24='sleep 24m;mocp stop'
-alias mocSleep='sleep 18m;mocp stop'
-alias mocConfig='vi ~/.moc/config'
 
 alias volUp='pulseaudio-ctl up'
 alias volDown='pulseaudio-ctl down'
@@ -513,5 +461,11 @@ alias qlO='quodlibet --seek 9:00&&qli'
 # Music mocp
 alias mcb="mocSetBpm.sh"
 alias mcg="mocSetGenre.sh"
+
+alias moc='mocp'
+alias mocSleep28='sleep 28m;mocp stop'
+alias mocSleep24='sleep 24m;mocp stop'
+alias mocSleep='sleep 18m;mocp stop'
+alias mocConfig='vi ~/.moc/config'
 
 alias mixxxCdSkin='cd /usr/share/mixxx/skins/'
