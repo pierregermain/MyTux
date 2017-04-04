@@ -508,7 +508,7 @@ alias qlT='quodlibet --seek 2:30&&qli'
 alias qlY='quodlibet --seek 3:00&&qli'
 alias qlU='quodlibet --seek 5:00&&qli'
 alias qlI='quodlibet --seek 7:00&&qli'
-alias qlO='quodlibet --seek 0:00&&qli'
+alias qlO='quodlibet --seek 9:00&&qli'
 
 # Music mocp
 alias mcb="mocSetBpm.sh"
