@@ -65,8 +65,8 @@ fi
 if [ -f $HOME/PIERRE/Scripts/shell_aliases ]; then
   source $HOME/PIERRE/Scripts/shell_aliases
 fi
-if [ -f $HOME/PIERRE/Scripts/shell_aliases_music ]; then
-  source $HOME/PIERRE/Scripts/shell_aliases_music
+if [ -f $HOME/Scripts/shell_aliases_music ]; then
+  source $HOME/Scripts/shell_aliases_music
 fi
 
 # My Scripts
