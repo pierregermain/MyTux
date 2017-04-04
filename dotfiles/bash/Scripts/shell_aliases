@@ -20,14 +20,12 @@ alias ..='cd ..'
 alias historyRecall='echo "!XXX"'
 alias historyLast='echo "!!"'
 
-#Shells
-alias sourceBashrc='source ~/.bashrc'
-alias sourceZshrc='source ~/.zshrc'
-
+# Shells
 alias shellsList='chsh -l'
 alias shellSetZsh='chsh -s $(which zsh)'
 alias shellSetBash='chsh -s $(which bash)'
 
+# Functions
 alias seeFunctions='declare -f'
 
 #background image
@@ -54,18 +52,15 @@ alias seeKeyboardBindingsX11='xev'
 alias setKeyboardUS='setxkbmap us -variant altgr-intl'
 alias setKeyboardES='setxkbmap es'
 
-alias keyboardXmodmapLoaded='xmodmap -pke'
-alias keyboardXmodmapLoadCAUTION='xmodmap ~/.Xmodmap'
-alias keyboardXmodmapModify='vi ~/.Xmodmap'
-
 alias kbUp="sudo keyboardBrightness 10"
 alias kbDown="sudo keyboardBrightness -10"
 
 # Display
-
-alias displayBrightnessS="xrandr --output eDP-1 --brightness +0.4"
-alias displayBrightnessM="xrandr --output eDP-1 --brightness +0.6"
-alias displayBrightnessL="xrandr --output eDP-1 --brightness +0.8"
+alias displayS="xrandr --output eDP-1 --brightness +0.4"
+alias displayM="xrandr --output eDP-1 --brightness +0.6"
+alias displayL="xrandr --output eDP-1 --brightness +0.8"
+alias seeDisplayDriver='inxi -G'
+alias seeMonitorValues='xrandr -q;echo;echo "Graphics Card:";lspci | grep VGA'
 
 # XORG
 alias sx='startx'
@@ -96,10 +91,9 @@ alias pacmanSeeUnnecesaryDependencies='pacman -Qdtq'
 alias pacmanSeePackageOwnedByABin='pacman -Qo'
 alias pacmanGrepNewConfigurationFiles='egrep "pac(new|orig|save)" /var/log/pacman.log'
 
-alias yaourtGetTheNewSetAURPackagesDB='yaourt -Sy'
+alias yaourtUpdatePackagesDB='yaourt -Sy'
 
 alias aurMake='makepkg -s'
-alias aurPacman='sudo pacman -U $1'
 
 ########
 #NETWORK
@@ -123,20 +117,11 @@ alias netctlReenableProfile='netctl reenable'
 alias netctlProfiles='netctl list'
 
 alias wifiDown='sudo ip link set wlp3s0 down'
-alias wwifiDown='sudo ip link set net0 down'
 alias wifiUp='sudo ip link set wlp3s0 up'
-alias wwifiUp='sudo ip link set net0 up'
 alias cw='sudo wifi-menu wlp3s0'
-alias cww='wwifiDown;sudo wifi-menu net0'
 alias wifiDriver='iw dev'
-alias wifiblocked='rfkill list'
 
 alias seeWifiInterfaces='iwconfig'
-alias aircrackStop='sudo airmon-ng stop wlan0; sudo airmon-ng stop wlp3s0'
-alias aircrackStopWlan0='sudo airmon-ng stop wlan0'
-alias aircrackStart='sudo airmon-ng start wlan0'
-alias aircrackStartCh11='sudo airmon-ng start wlan0 11'
-alias aircrackInjectionTest='sudo aireplay-ng -9 wlan0'
 
 alias firewallList='sudo ufw app list'
 alias firewallInfo='sudo ufw app info $1'
@@ -165,8 +150,8 @@ alias seeKernelMsg='dmesg'
 alias seeKernelMsgNotice='dmesg --reltime -l notice'
 alias seeKernelMsgPager='dmesg --reltime -H'
 alias seeKernelErr='dmesg --reltime -l err'
-alias seeSystemctl1='systemctl --failed'
-alias seeSystemctl2='systemctl;systemctl list-units;systemctl --failed;systemctl list-unit-files'
+alias seeSystemctlFailed='systemctl --failed'
+alias seeSystemctlAll='systemctl;systemctl list-units;systemctl --failed;systemctl list-unit-files'
 alias systemctlStopUnit='sudo systemctl stop'
 alias systemctlActivateUnit='sudo systemctl start'
 alias systemctlReloadConfigurationOfUnit='sudo systemctl reload'
@@ -175,22 +160,23 @@ alias systemctlEnableAServiceOnBoot='sudo systemctl enable'
 alias systemctlShowChangedUnits='sudo systemctl daemon-reload'
 alias systemctlInfoUnit='sudo systemctl status'
 alias seeXorgLog='cat /var/log/Xorg.0.log'
-alias seeDisplayDriver='inxi -G'
 
-alias halt='sudo halt -p'
-alias poweroff='sudo poweroff'
-alias i3lock='i3lock -c 111111 -d'
 
 #Edit Kernel Mode Settings
 alias seeBoot='cat /boot/refind_linux.conf'
 alias seeKernelModeSettings='cat /etc/mkinitcpio.conf'
 alias regenerateBootImage='sudo mkinitcpio -p linux'
 
+# On/Off
+alias halt='sudo halt -p'
+alias poweroff='sudo poweroff'
+alias i3lock='i3lock -c 111111 -d'
+
+# Temps/Battery
 alias seeTemps='sensors'
 alias seeProcesses='ps -u pierre'
 
-alias seeMonitorValues='xrandr -q;echo;echo "Graphics Card:";lspci | grep VGA'
-
+#Time
 alias setTimeZoneMonterrey='timedatectl set-timezone America/Monterrey'
 alias setTimeZoneMadrid='timedatectl set-timezone Europe/Madrid'
 alias setTimeYYYY-MM-DD='echo "use asteriscos";timedatectl set-time'
