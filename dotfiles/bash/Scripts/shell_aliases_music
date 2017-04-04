@@ -1,0 +1,63 @@
+#
+# My Shell Aliases
+#
+
+# Music
+
+alias sedPath="sed 's/.*\/.*\///'"
+alias sedSpaceAsterisc="sed 's/\ /*/'g"
+alias sedAsterisc="sed s/\"'\"/*/g"
+alias sedSpaceEscaped="sed 's/\ /\\\ /'g"
+
+alias volUp='pulseaudio-ctl up'
+alias volDown='pulseaudio-ctl down'
+alias volumeMute='pulseaudio-ctl mute'
+
+alias audioControl='pavucontrol'
+
+# Music Quodlibet
+alias ql0='quodlibet --set-rating 0'
+alias ql1='quodlibet --set-rating 0.25'
+alias ql2='quodlibet --set-rating 0.50'
+alias ql3='quodlibet --set-rating 0.75'
+alias ql4='quodlibet --set-rating 1.00'
+
+alias qlg='quodlibetSetGenre.sh'
+alias qlb='quodlibetSetBpm.sh'
+alias qla='qlg&&qlb'
+alias qla1='qla&&ql1'
+alias qla2='qla&&ql2'
+alias qla3='qla&&ql3'
+alias qla4='qla&&ql4'
+
+alias qlPlayPause28='sleep 28m;quodlibet --play-pause'
+alias qlPlayPause22='sleep 22m;quodlibet --play-pause'
+alias qlPlayPause16='sleep 16m;quodlibet --play-pause'
+
+alias qli='quodlibetInfo.sh'
+alias qln='quodlibet --next && qli'
+alias qlp='quodlibet --previous && qli'
+alias qls='quodlibet --play-pause'
+
+alias qlP='quodlibet --seek 0:00&&qli'
+alias qlQ='quodlibet --seek 0:30&&qli'
+alias qlW='quodlibet --seek 1:00&&qli'
+alias qlE='quodlibet --seek 1:30&&qli'
+alias qlR='quodlibet --seek 2:00&&qli'
+alias qlT='quodlibet --seek 2:30&&qli'
+alias qlY='quodlibet --seek 3:00&&qli'
+alias qlU='quodlibet --seek 5:00&&qli'
+alias qlI='quodlibet --seek 7:00&&qli'
+alias qlO='quodlibet --seek 9:00&&qli'
+
+# Music mocp
+alias mcb="mocSetBpm.sh"
+alias mcg="mocSetGenre.sh"
+
+alias moc='mocp'
+alias mocSleep28='sleep 28m;mocp stop'
+alias mocSleep24='sleep 24m;mocp stop'
+alias mocSleep='sleep 18m;mocp stop'
+alias mocConfig='vi ~/.moc/config'
+
+alias mixxxCdSkin='cd /usr/share/mixxx/skins/'
