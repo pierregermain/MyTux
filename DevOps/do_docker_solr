@@ -1,0 +1,34 @@
+#!/bin/bash
+# Este script levanta solr en nuestro local
+# Además asigna la IP de solr a nuestro /etc/hosts previamente configurado
+
+#DEFINICION VARIABLES
+
+#DOCKER LOCAL
+DOCKER_CONTAINER='my_solr'
+DOCKER_URL='solr.local'
+
+echo "@ Starting docker..."
+docker start $DOCKER_CONTAINER
+
+echo "@ Obtener IP"
+DOCKER_IP=$(docker inspect $DOCKER_CONTAINER | grep IPA)
+DOCKER_PORT=$(docker inspect $DOCKER_CONTAINER | grep HostPort)
+
+#TODO: Buscar Ip que no tiene porque empezar con tres caracteres
+n='[0-9]\{1,3\}'
+DOCKER_IP=$(echo $DOCKER_IP | sed "s/.*\($n$n$n\.$n\.$n\.$n\).*/\1/")
+
+echo "Container IP:"
+echo $DOCKER_IP
+
+echo "Container Port:"
+echo $DOCKER_PORT
+
+echo "Modificar el /etc/hosts"
+
+x=".*$DOCKER_URL"
+y="$DOCKER_IP $DOCKER_URL"
+sudo sed -i -e "s/$x/$y/" /etc/hosts
+
+echo "@ Process Finished."

@@ -1,0 +1,25 @@
+#!/bin/bash
+# Este script sirve para conectarse a un servidor remoto previamente configurado
+# En dicho servidor realiza copia de seguridad de Files
+# Y la baja a tu local
+
+#DEFINICION VARIABLES
+
+SERV_SSH='ll.dev'
+SERV_REPO_DIR='/var/www/ll/sites/default'
+SERV_BACKUP_DIR='/home/ubuntu/files-backup'
+SERV_FILES_DIR='files'
+
+# Aqui meterle el usuario unico de quien vaya a usar el script (Ej. Pierre)
+FILES_EXPORT_FILE_NAME='files-ll-dev-Pierre$(date +%Y-%m-%dT%H.%I.%S).tar.gz'
+FILES_EXPORT_FILE_NAME_PATTERN='files-ll-dev-Pierre*.tar.gz'
+LOCAL_FILES_IMPORT_PATH='/home/pierre/webapps/ll/files/'
+
+#COMPRESS FILES
+ssh $SERV_SSH 'cd '"$SERV_REPO_DIR"';pwd;tar -zcvf '"$FILES_EXPORT_FILE_NAME $SERV_FILES_DIR"' '
+
+#BACKUP FILES
+ssh $SERV_SSH 'cd '"$SERV_REPO_DIR"';pwd;mv '"$FILES_EXPORT_FILE_NAME_PATTERN $SERV_BACKUP_DIR"' '
+
+#DOWNLOAD FILES
+scp $SERV_SSH:$SERV_BACKUP_DIR/$(ssh $SERV_SSH 'ls -t '"$SERV_BACKUP_DIR"'/ |head -1') $LOCAL_FILES_IMPORT_PATH

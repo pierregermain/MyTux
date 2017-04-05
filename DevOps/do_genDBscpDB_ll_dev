@@ -1,0 +1,32 @@
+#!/bin/bash
+# Este script sirve para conectarse a un servidor remoto previamente configurado
+# En dicho servidor flushea las cashes
+# Realiza Backup de la DB (se debe configurar para cada usuario)
+# Comprime la DB
+# Y la baja a tu local
+
+#DEFINICION VARIABLES
+
+SERV_SSH='projectname.dev'
+SERV_REPO_DIR='/var/www/projectname'
+SERV_DB_BACKUP_DIR='/home/ubuntu/db'
+SERV_DB_USER='user'
+SERV_DB_PWD='pwd'
+SERV_DB_HOST='host'
+SERV_DB_NAME='projectname'
+# Aqui meterle el usuario unico de quien vaya a usar el script (Ej. Ramiro)
+DB_EXPORT_FILE_NAME='projectname-dev-Pierre$(date +%Y-%m-%dT%H.%I.%S).sql'
+DB_EXPORT_FILE_NAME_PATTERN='projectname-dev-Pierre*.sql'
+LOCAL_DB_IMPORT_PATH='/home/user/webapps/projectname/db/'
+
+#FLUSH CASHES
+ssh $SERV_SSH 'cd '"$SERV_REPO_DIR"';pwd;drupal cr all;'
+
+#BACKUP DB
+ssh $SERV_SSH 'cd '"$SERV_DB_BACKUP_DIR"';pwd;mysqldump -u '"$SERV_DB_USER"' -p'"$SERV_DB_PWD"' -h '"$SERV_DB_HOST $SERV_DB_NAME"' > '"$DB_EXPORT_FILE_NAME"' '
+
+#COMPRIMIR DB
+ssh $SERV_SSH 'cd '"$SERV_DB_BACKUP_DIR"';pwd;gzip '"$DB_EXPORT_FILE_NAME_PATTERN"' '
+
+#BAJAR DB CREADA
+scp $SERV_SSH:$SERV_DB_BACKUP_DIR/$(ssh $SERV_SSH 'ls -t '"$SERV_DB_BACKUP_DIR"'/ |head -1') $LOCAL_DB_IMPORT_PATH

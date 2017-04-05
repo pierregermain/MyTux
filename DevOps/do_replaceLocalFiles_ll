@@ -1,0 +1,36 @@
+#!/bin/bash
+# Este script sirve para instalar en nuestro local los Files de DEV/PROD
+# ya bajada previamente en nuestro local
+
+#DEFINICION VARIABLES
+
+#LOCAL
+DOCKER_IMPORT_PATH='/var/www/html/files'
+DOCKER_FILES_PATH='/var/www/html/ll/sites/default'
+
+#DOCKER LOCAL
+DOCKER_URL='ll.local'
+DOCKER_USER='root'
+DOCKER_PWD='root'
+
+#FILES_PATTERN
+FILE_PATTERN='files*.tar.gz'
+CHOWN_USER='apache'
+CHOWN_GROUP='apache'
+
+#COPIA FICHEROS
+echo "@ Connecting to your Docker:"
+sshpass -p $DOCKER_PWD ssh $DOCKER_USER@$DOCKER_URL 'cd '"$DOCKER_IMPORT_PATH"';echo "Importing in Docker ...";echo `ls -t|head -1`;cp `ls -t|head -1` '"$DOCKER_FILES_PATH"
+
+#DESCOMPRIMIR
+echo "@ Descomprimir:"
+sshpass -p $DOCKER_PWD ssh $DOCKER_USER@$DOCKER_URL 'cd '"$DOCKER_FILES_PATH"';echo "Importing in Docker ...";echo `ls -t|head -1`;tar -xzvf `ls -t|head -1`'
+
+#BORRAR FICHERO tar.gz
+echo "@ Borrado Fichero Temporal:"
+sshpass -p $DOCKER_PWD ssh $DOCKER_USER@$DOCKER_URL 'cd '"$DOCKER_FILES_PATH"';rm '"$FILE_PATTERN"
+
+#PERMISOS
+echo "@ Dar Permisos:"
+sshpass -p $DOCKER_PWD ssh $DOCKER_USER@$DOCKER_URL 'chown -R '"$CHOWN_USER"':'"$CHOWN_GROUP $DOCKER_FILES_PATH"
+echo "@ Process Finished."

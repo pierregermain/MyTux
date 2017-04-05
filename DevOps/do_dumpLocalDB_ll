@@ -1,0 +1,31 @@
+#!/bin/bash
+# Este script sirve para instalar en nuestro local la DB de DEV/PROD
+# ya bajada previamente en nuestro local
+
+#DEFINICION VARIABLES
+
+#LOCAL
+LOCAL_DB_IMPORT_PATH='/home/pierre/webapps/projectname/db/'
+
+#DOCKER LOCAL
+DOCKER_URL='projectname.local'
+DOCKER_USER='root'
+DOCKER_PWD='root'
+
+DOCKER_DB_IMPORT_PATH='/var/www/html/db'
+DOCKER_DB_USER='drupal8'
+DOCKER_DB_PWD='drupal8'
+DOCKER_DB_HOST='localhost'
+DOCKER_DB_NAME='drupal8'
+
+DOCKER_DRUPAL_PATH='/var/www/html/projectname'
+DOCKER_DRUPAL_NEW_PWD='1'
+
+#INSTALAR LA DB BAJADA
+echo "@ Connecting to your Docker:"
+sshpass -p $DOCKER_PWD ssh $DOCKER_USER@$DOCKER_URL 'cd '"$DOCKER_DB_IMPORT_PATH"';echo "Importing in Docker ...";echo `ls -t|head -1`;pv `ls -t|head -1`|gunzip|mysql -u '"$DOCKER_DB_USER"' -p'"$DOCKER_DB_PWD"' -h '"$DOCKER_DB_HOST"' '"$DOCKER_DB_NAME"
+
+#RESETEAR LA CONTRASEÑA DE DRUPAL
+echo "@ Reset Drupal Pwd:"
+sshpass -p $DOCKER_PWD ssh $DOCKER_USER@$DOCKER_URL 'cd '"$DOCKER_DRUPAL_PATH"';drupal user:password:reset 1 '"$DOCKER_DRUPAL_NEW_PWD"';drupal cr all'
+echo "@ Process Finished."
