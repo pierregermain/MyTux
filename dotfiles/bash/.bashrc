@@ -32,7 +32,7 @@ fi
 setxkbmap us -variant altgr-intl
 
 # Basename PWD in xfce4-terminal title
-#export PROMPT_COMMAND='echo -ne "\033]0;* ${PWD##*/} *\007"'
+export PROMPT_COMMAND='echo -ne "\033]0; $HOSTNAME: $PWD\007"'
 
 # Make the terminal vi like
 set -o vi
