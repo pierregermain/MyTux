@@ -32,7 +32,14 @@ else # normal
 fi
 
 # Set Keyboard
-setxkbmap us -variant altgr-intl
+
+if [ "$DISPLAY" != "" ] ; then
+  # Call X clients
+  setxkbmap us -variant altgr-intl
+fi
+
+
+
 
 # Basename PWD in xfce4-terminal title
 #export PROMPT_COMMAND='echo -ne "\033]0;* ${PWD##*/} *\007"'

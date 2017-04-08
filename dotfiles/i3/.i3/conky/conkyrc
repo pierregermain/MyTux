@@ -24,12 +24,11 @@ TEXT
 #Wifi 1
 {"full_text":"|","color":"\#888888","separator":false,"separator_block_width":6},\
 {"full_text":"${if_up wlp3s0}${addr wlp3s0} ${wireless_essid wlp3s0} ${wireless_link_qual_perc wlp3s0}${endif}","color":"\#EEEEEE","separator":false,"separator_block_width":6},\
-{"full_text":"${if_up wlp2s0}${addr wlp2s0} ${wireless_essid wlp2s0} ${wireless_link_qual_perc wlp2s0}${endif}","color":"\#EEEEEE","separator":false,"separator_block_width":6},\
-#wlan
+#Wifi 2
 {"full_text":"${if_up eth0}${addr eth0}${endif}","color":"\#a9db6c","separator":false,"separator_block_width":6},\
-{"full_text":"${if_up wlan0}${addr wlan0} ${wireless_essid wlan0}${endif}","color":"\#a9db6c","separator":false,"separator_block_width":6},\
-{"full_text":"${if_up enp0s31f6}${addr enp0s31f6} ${wireless_essid enp0s31f6}${endif}","color":"\#a9db6c","separator":false,"separator_block_width":6},\
+{"full_text":"${if_up wlan0}${addr wlan0} ${wireless_essid wlan0} ${wireless_link_qual_perc wlan0}%${endif}","color":"\#a9db6c","separator":false,"separator_block_width":6},\
 #Sound
+{"full_text":"|","color":"\#888888","separator":false,"separator_block_width":6},\
 {"full_text":"${exec amixer get Master | amixer get Master | grep "Mono: Playback"| awk '{print $4 $6}'}","color":"\#bad314","separator":false,"separator_block_width":6},\
 #Hard Drives
 {"full_text":"|","color":"\#888888","separator":false,"separator_block_width":6},\
