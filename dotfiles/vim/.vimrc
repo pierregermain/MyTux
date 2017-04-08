@@ -32,6 +32,9 @@ set clipboard=unnamedplus
 "vmap <C-v> c<ESC>"+p
 "imap <C-v> <C-r><C-o>+
 
+" Search
+:set ignorecase
+
 " netrw (default nerdtree)
 set nocompatible
 filetype plugin on

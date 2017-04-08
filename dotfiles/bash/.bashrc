@@ -2,6 +2,9 @@
 # ~/.bashrc
 #
 
+# Debug
+#set -x
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -29,7 +32,14 @@ else # normal
 fi
 
 # Set Keyboard
-setxkbmap us -variant altgr-intl
+
+if [ "$DISPLAY" != "" ] ; then
+  # Call X clients
+  setxkbmap us -variant altgr-intl
+fi
+
+
+
 
 # Basename PWD in xfce4-terminal title
 export PROMPT_COMMAND='echo -ne "\033]0; $HOSTNAME: $PWD\007"'
@@ -61,6 +71,9 @@ if [ -f ~/Scripts/shell_aliases ]; then
 fi
 if [ -f $HOME/PIERRE/Scripts/shell_aliases ]; then
   source $HOME/PIERRE/Scripts/shell_aliases
+fi
+if [ -f $HOME/Scripts/shell_aliases_music ]; then
+  source $HOME/Scripts/shell_aliases_music
 fi
 
 # My Scripts

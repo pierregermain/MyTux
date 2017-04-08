@@ -1,0 +1,35 @@
+#!/bin/bash
+# Este script sirve para levantar nuestro docker local
+# Además asigna la IP del contenedor a nuestro /etc/hosts previamente configurado
+
+#DEFINICION VARIABLES
+
+#DOCKER LOCAL
+DOCKER_CONTAINER='projectname'
+DOCKER_URL='projectname.local'
+DOCKER_USER='root'
+DOCKER_PWD='root'
+
+echo "@ Starting docker..."
+docker start $DOCKER_CONTAINER
+
+echo "@ Obtener IP"
+DOCKER_IP=$(docker inspect $DOCKER_CONTAINER | grep IPA)
+
+sleep 3
+#TODO: Buscar Ip que no tiene porque empezar con tres caracteres
+n='[0-9]\{1,3\}'
+DOCKER_IP=$(echo $DOCKER_IP | sed "s/.*\($n$n$n\.$n\.$n\.$n\).*/\1/")
+
+echo "Container IP:"
+echo $DOCKER_IP
+
+sshpass -p $DOCKER_PWD ssh $DOCKER_USER@$DOCKER_IP 'pwd;service httpd start && service mysqld start;'
+
+echo "Modificar el /etc/hosts"
+
+x=".*$DOCKER_URL"
+y="$DOCKER_IP $DOCKER_URL"
+sudo sed -i -e "s/$x/$y/" /etc/hosts
+
+echo "@ Process Finished."

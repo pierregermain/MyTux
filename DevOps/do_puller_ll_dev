@@ -1,0 +1,12 @@
+#!/bin/bash
+# Este script sirve para realizar pull en dev de letraslibres
+
+#DEFINICION VARIABLES
+
+SERV_SSH='projectname.dev'
+SERV_REPO_DIR='/var/www/projectname'
+
+#Realizar Pull en Dev
+ssh $SERV_SSH 'cd '"$SERV_REPO_DIR"';php puller.php;'
+
+echo 'OKEY'

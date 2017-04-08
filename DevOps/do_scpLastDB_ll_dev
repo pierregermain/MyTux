@@ -1,0 +1,2 @@
+#!/bin/bash
+scp projectname.dev:/home/ubuntu/db/$(ssh projectname.dev 'ls -t /home/ubuntu/db/ |head -1') /home/pierre/webapps/projectname/db/
