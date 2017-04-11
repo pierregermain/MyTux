@@ -38,7 +38,7 @@ bindsym $mod+Shift+Escape exec --no-startup-id xfce4-popup-applicationsmenu
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id dmenu_extended_run #i3-dmenu-desktop
 bindsym $mod+Shift+d exec --no-startup-id synapse
 
 # change focus
@@ -218,11 +218,12 @@ bindsym $mod+Tab workspace back_and_forth
 
 #Audio Player
 #MOC
-bindsym XF86AudioPlay exec "mocp --toggle-pause"
-bindsym XF86AudioNext exec "mocp --next"
-bindsym $mod+XF86AudioNext exec "mocp -k +10"
-bindsym XF86AudioPrev exec "mocp --previous"
-bindsym $mod+XF86AudioPrev exec "mocp -k -10"
+bindsym $mod+XF86AudioPlay exec "mocp --toggle-pause"
+bindsym $mod+XF86AudioNext exec "mocp --next"
+bindsym $mod+XF86AudioPrev exec "mocp --previous"
+bindsym $mod+Mod1+XF86AudioNext exec "mocp -k +10"
+bindsym $mod+Mod1+XF86AudioPrev exec "mocp -k -10"
+
 #QUOD LIBET
 #TODO CALCULAR TIEMPO FICHERO Y A BASE DE ELLO PUES IR AL 30% 50% 75%
 bindsym $mod+Mod1+grave exec "quodlibet --seek 0:00"
@@ -236,14 +237,16 @@ bindsym $mod+Mod1+6 exec "quodlibet --seek 3:00"
 bindsym $mod+Mod1+7 exec "quodlibet --seek 5:00"
 bindsym $mod+Mod1+8 exec "quodlibet --seek 7:00"
 bindsym $mod+Mod1+9 exec "quodlibet --seek 9:00"
-bindsym $mod+Mod1+XF86AudioPlay exec "quodlibet --play-pause"
-bindsym $mod+Mod1+F12 exec "quodlibet --play-pause"
-bindsym $mod+Mod1+XF86AudioNext exec "quodlibet --next"
-bindsym $mod+Mod1+XF86AudioPrev exec "quodlibet --previous"
+
+bindsym XF86AudioPlay exec "quodlibet --play-pause"
+bindsym XF86AudioNext exec "quodlibet --next"
+bindsym XF86AudioPrev exec "quodlibet --previous"
+
 bindsym $mod+Mod1+Right exec "quodlibet --seek +0:10"
 bindsym $mod+Mod1+Left exec "quodlibet --seek -0:10"
 bindsym $mod+Mod1+Up exec "quodlibet --previous"
 bindsym $mod+Mod1+Down exec "quodlibet --next"
+
 #############
 #APPLE REMOTE
 #############
