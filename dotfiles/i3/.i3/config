@@ -121,8 +121,8 @@ bindsym $mod+m move scratchpad
 bindsym $mod+o scratchpad show
 
 #Border Style for New Windows
-#new_window pixel 1
-#new_float pixel 2
+#new_window pixel 2
+#new_float pixel 3
 
 #floating_minimum_size 300 x 200
 #floating_maximum_size -1 x -1
@@ -148,13 +148,13 @@ popup_during_fullscreen leave_fullscreen
 for_window [title="Volume Control"] floating enable
 
 # assing program to a specific workspace
-assign [class="Quodlibet"] x
+assign [class="Filezilla"] 3
+	assign [class="Quodlibet"] x
 assign [class="Mixxx"] x
 assign [class="Transmission"] 9
 
-#Gimp
-assign [class="Gimp"] 8
 #bindsym $Mod+g workspace 8 img
+assign [class="Gimp"] 8
 for_window [title="GIMP Startup"] move workspace 8
 for_window [window_role="gimp-toolbox"] floating disable; layout stacking; move left; resize shrink right 31px or 31 ppt
 
@@ -215,6 +215,21 @@ bindsym $mod+F11 exec "xfce4-screenshooter --region"
 # Alt - Tab
 workspace_auto_back_and_forth no
 bindsym $mod+Tab workspace back_and_forth
+
+# Multi Monitor
+
+# Internal
+workspace 1 output eDP-1
+workspace 3 output eDP-1
+workspace 5 output eDP-1
+workspace 7 output eDP-1
+workspace 8 output eDP-1
+workspace 9 output eDP-1
+workspace "x" output eDP-1
+# External
+workspace 2 output DP-3
+workspace 4 output DP-3
+workspace 6 output DP-3
 
 #Audio Player
 #MOC

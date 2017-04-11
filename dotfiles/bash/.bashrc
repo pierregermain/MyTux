@@ -130,11 +130,13 @@ fi
 
 # PWB
 
-# Keyboard
+# X11 Keyboard
 if [ "$DISPLAY" != "" ] ; then
   # Call X clients
   setxkbmap us -variant altgr-intl
 fi
+# Basename PWD in xfce4-terminal title
+#export PROMPT_COMMAND='echo -ne "\033]0; $HOSTNAME: $PWD\007"'
 
 # Make the terminal vi like
 set -o vi
