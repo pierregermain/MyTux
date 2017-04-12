@@ -193,7 +193,8 @@ alias touchpadDaemonBackground='touchpadDaemon -d'
 
 #Fonts
 alias seeFonts='cd /usr/share/fonts'
-alias fontCompile='fc-cache -vf'
+alias compileFonts='fc-cache -vf'
+alias compileXresources='xrdb ~/.Xresources'
 
 #################
 #Users and Groups
