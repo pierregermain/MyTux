@@ -109,9 +109,9 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+#if [ -f ~/.bash_aliases ]; then
+#    . ~/.bash_aliases
+#fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -130,11 +130,12 @@ fi
 
 # PWB
 
-# X11 Keyboard
+# X configurations
 if [ "$DISPLAY" != "" ] ; then
   # Call X clients
   setxkbmap us -variant altgr-intl
 fi
+
 # Basename PWD in xfce4-terminal title
 #export PROMPT_COMMAND='echo -ne "\033]0; $HOSTNAME: $PWD\007"'
 
@@ -164,10 +165,16 @@ if [ -f ~/Scripts/shell_aliases ]; then
   source ~/Scripts/shell_aliases
 fi
 if [ -f $HOME/PIERRE/Scripts/shell_aliases ]; then
-  source $HOME/PIERRE/Scripts/shell_aliases
+  . $HOME/PIERRE/Scripts/shell_aliases
 fi
 if [ -f $HOME/Scripts/shell_aliases_music ]; then
-  source $HOME/Scripts/shell_aliases_music
+  . $HOME/Scripts/shell_aliases_music
+fi
+
+# Autojump
+# Load autojump
+if [ -f /usr/share/autojump/autojump.sh ]; then
+. /usr/share/autojump/autojump.sh
 fi
 
 # My Scripts
