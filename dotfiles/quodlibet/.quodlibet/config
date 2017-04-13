@@ -27,7 +27,7 @@ version = 0
 
 [plugins]
 active_plugins = CustomCommands
-	FilterAll
+	Regex Substitution
 	RemoveID3TLEN
 	filterbrowser
 	follow
@@ -36,7 +36,7 @@ active_plugins = CustomCommands
 	MusicBrainz lookup
 	Random Album Playback
 	AcoustidSearch
-	Regex Substitution
+	FilterAll
 	refresh-songs
 	Shuffle Playlist
 	Theme Switcher
@@ -159,7 +159,7 @@ panes = genre
 playlist = NEM PRESENTACION INICIO
 playlists_pos = 0.277777777778
 playlistsbrowser_pos = 0.156576200418
-query_text = 80s
+query_text = genre = /^Tc\/.*/
 radio = college
 rating_click = true
 rating_confirm_multiple = true
@@ -206,7 +206,7 @@ plugin_selection = Shuffle Playlist
 prefs_page = tagging
 queue = True
 queue_expanded = True
-queue_position = 0.528776978417
+queue_position = 0.529131985731
 quodlibet_information_maximized = 0
 quodlibet_information_position = 278 224
 quodlibet_information_size_ = 669 580
@@ -221,10 +221,10 @@ quodlibet_properties_size_single = 807 429
 quodlibet_size_ = 1914 1036
 repeat = False
 repeat_mode = one_song
-seek = 71943
+seek = 231779
 shuffle = False
 shufflequeue = false
-song = /media/pierre/MUZ/MUZ/MP3/OLDIES/Las100Mej.Canc.D.Verano(ßƒ)/cd4(ßƒ)/Voyage Voyage.mp3
+song = /media/pierre/MUZ/MUZ/NEW/FLAC/VA - Jazz Break The Best Of Contemporary Smooth Jazz (2007) {FLAC} vtwin88cube/14.A Remark You Make.flac
 songlist = True
 sortby = 0~rating
 	

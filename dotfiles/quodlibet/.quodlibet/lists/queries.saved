@@ -64,11 +64,13 @@ PACHANGA
 AFRO
 |(~dirname = /media\/pierre\/MUZ\/MUZ\/MP3\/TRIP HOP\/.*/,~dirname = /media\/pierre\/MUZ\/MUZ\/FLAC\/TRIP HOP\/.*/)
 TRIP HOP
-&(|(~dirname = /media\/pierre\/MUZ\/MUZ\/MP3\/HIP\ HOP.*/,~dirname = /media\/pierre\/MUZ\/MUZ\/FLAC\/HIP\ HOP.*/),~artist~title~album~genre=/.*/)
-Ejemplo AND y OR
 &(#(rating =0.75),~genre~people~album=//)
 (***)
+&(genre = /.*\/aaaaaa.*/,genre = /.*\/bbbbbbbb.*/)
+EJEMPLO AND
 &(#(bitrate >=300))
 Bitrate > 300
 &(#(bitrate <=159),#(rating > 0.15))
-Comprobar estas
+BUEN RATING, MALA CALIDAD
+&(genre = !/^Bt\/.*/,genre = !/^\(.*/,genre = !/^Acc\/.*/,genre = !/^H\/.*/,genre = !/^D\/.*/,genre = !/^Tc\/.*/,genre = !/^¬¬.*/,genre = !/^Pc.*/,#(bitrate >=300))
+SIN GENRE
