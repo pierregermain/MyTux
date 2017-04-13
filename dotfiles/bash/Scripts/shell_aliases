@@ -19,6 +19,11 @@ alias ..='cd ..'
 #History
 alias historyRecall='echo "!XXX"'
 alias historyLast='echo "!!"'
+alias cdBack='cd -'
+alias lastParameter='!$'
+#autojump
+alias cdMostused='j'
+alias cdSeeMostUsed='autojump -s'
 
 # Shells
 alias shellsList='chsh -l'
