@@ -1,0 +1,25 @@
+[global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  tab_position = hidden
+  title_font = Sans 14
+  title_use_system_font = False
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = pierre - no titlebar
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_darkness = 0.94
+    background_image = None
+  [[pierre - no titlebar]]
+    background_image = None
+    font = Monospace 14
+    show_titlebar = False
+    use_system_font = False
