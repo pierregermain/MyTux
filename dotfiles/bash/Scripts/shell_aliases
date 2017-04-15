@@ -8,12 +8,13 @@
 #Lazy
 alias o='open'
 alias o.='open . &'
-alias e='exit'
+alias q='exit'
 alias a='alias'
 alias h='history'
 alias c='clear'
 alias g='grep -i'
 alias ag='alias|grep -i '
+alias r='ranger'
 alias ..='cd ..'
 
 #History
@@ -220,10 +221,6 @@ alias seeUsersAndGroupChkIntegrity='pwck;grpck'
 
 #Symbolik Links: createSymLink /File/To/Link/To give_it_a_Name
 alias createSymbLink_FileToLinkTo_NameIt='ln -s'
-
-#File Managers
-alias fileManager='ranger'
-alias thunar='thunar;exit'
 
 #List Files
 alias lsByModDate='ls -tlar -h'

@@ -134,6 +134,10 @@ fi
 if [ "$DISPLAY" != "" ] ; then
   # Call X clients
   setxkbmap us -variant altgr-intl
+  # URxvt
+  if [ -f ~/.Xresources ]; then
+    xrdb -merge ~/.Xresources
+  fi
 fi
 
 # Basename PWD in xfce4-terminal title
@@ -174,8 +178,12 @@ fi
 # Autojump
 # Load autojump
 if [ -f /usr/share/autojump/autojump.sh ]; then
-. /usr/share/autojump/autojump.sh
+  . /usr/share/autojump/autojump.sh
 fi
+if [ -f /usr/share/autojump/autojump.bash ]; then
+  . /usr/share/autojump/autojump.bash
+fi
+
 
 # My Scripts
 export PATH=$PATH:$HOME/Scripts
