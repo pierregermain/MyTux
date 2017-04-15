@@ -35,7 +35,8 @@ TEXT
 {"full_text":"${fs_free /}","color":"\#c7b673","separator":false,"separator_block_width":6},\
 {"full_text":"${if_mounted /home} ${fs_free /home}${endif}","color":"\#c7b673","separator":false,"separator_block_width":6},\
 {"full_text":"${if_mounted /media/pierre/DATA} ${fs_free /media/pierre/DATA}${endif}","color":"\#c7b673","separator":false,"separator_block_width":6},\
-{"full_text":"${if_mounted /media/pierre/MUZ} ${fs_free /media/pierre/MUZ}${endif}","color":"\#c7b673","separator":false,"separator_block_width":6},\
+{"full_text":"${if_mounted /run/media/pierre/DATA} ${fs_free /run/media/pierre/DATA}${endif}","color":"\#c7b673","separator":false,"separator_block_width":6},\
+{"full_text":"${if_mounted /run/media/pierre/MUZ} ${fs_free /run/media/pierre/MUZ}${endif}","color":"\#c7b673","separator":false,"separator_block_width":6},\
 #Load:
 {"full_text":"|","color":"\#888888","separator":false,"separator_block_width":6},\
 {"full_text":"${loadavg}","color":"\#a9db6c","separator":false,"separator_block_width":6},\
