@@ -9,7 +9,7 @@ windows = true
 
 [settings]
 bayesian_rating_factor = 0.0
-columns = ~#track,~#bitrate,~#length,~artist~title,genre,~filename,bpm,~rating
+columns = ~#bitrate,~#length,genre,~artist~title,~rating,bpm,album,~dirname
 	
 default_rating = 0.0
 disable_hints = false
@@ -19,7 +19,7 @@ rating_symbol_blank = ☆
 rating_symbol_full = ★
 ratings = 4
 repeat = False
-scan = /media/pierre/MUZ/MUZ/Pierre Germain (VA):/media/pierre/MUZ/MUZ/MP3:/media/pierre/MUZ/MUZ/FLAC:/media/pierre/MUZ/MUZ/RADIO:/media/pierre/MUZ/MUZ/LA_MALETA/PACHANGA:/media/pierre/MUZ/MUZ/NEW/FLAC:/media/pierre/MUZ/MUZ/NEW/MP3
+scan = ~/MUZ/MUZ/Pierre Germain (VA):~/MUZ/MUZ/MP3:~/MUZ/MUZ/FLAC:~/MUZ/MUZ/RADIO:~/MUZ/MUZ/LA_MALETA/PACHANGA:~/MUZ/MUZ/NEW/FLAC:~/MUZ/MUZ/NEW/MP3
 search_tags = 
 
 [__config__]
@@ -27,16 +27,16 @@ version = 0
 
 [plugins]
 active_plugins = CustomCommands
-	Regex Substitution
-	RemoveID3TLEN
+	FilterAll
 	filterbrowser
+	ExportMeta
 	follow
 	Remove Playlist Duplicates
 	Browse Folders
 	MusicBrainz lookup
 	Random Album Playback
 	AcoustidSearch
-	FilterAll
+	ImportMeta
 	refresh-songs
 	Shuffle Playlist
 	Theme Switcher
@@ -45,7 +45,6 @@ active_plugins = CustomCommands
 	Equalizer
 	Browse Files
 	Duplicates
-	mpd_server
 	musicbrainz-cover
 	Export to HTML
 	queue
@@ -112,7 +111,7 @@ theme switcher_prefer_dark = false
 theme switcher_theme = Mint-X
 titlecase_allow_all_caps = True
 titlecase_human_title_case = True
-track_repeat_play_each = 3
+track_repeat_play_each = 2
 
 [library]
 exclude = 
@@ -148,8 +147,8 @@ collection_headers = ~year 0
 collectionbrowser_pos = 0.274008350731
 cover_size = -1
 covergrid_pos = 0.399770904926
-filesystem = /media/pierre/MUZ/MUZ/FLAC
-filesystem_pos = 0.125914315569
+filesystem = ~/MUZ/MUZ/FLAC
+filesystem_pos = 0.386624869383
 internetradio_pos = 0.39796495195
 mediadevices_pos = 0.398696360674
 pane_selection = 0	Grunge	.
@@ -159,7 +158,7 @@ panes = genre
 playlist = NEM PRESENTACION INICIO
 playlists_pos = 0.277777777778
 playlistsbrowser_pos = 0.156576200418
-query_text = genre = /^Tc\/.*/
+query_text = 
 radio = college
 rating_click = true
 rating_confirm_multiple = true
@@ -175,8 +174,8 @@ round = true
 [memory]
 browser = SearchBar
 browser_filesystem_maximized = 0
-browser_filesystem_position = 0 613
-browser_filesystem_size_ = 1628 446
+browser_filesystem_position = 0 547
+browser_filesystem_size_ = 1914 507
 browser_panedbrowser_maximized = 0
 browser_panedbrowser_position = 0 18
 browser_panedbrowser_size_ = 1429 1041
@@ -188,10 +187,10 @@ browser_playlistsbrowser_position = 0 34
 browser_playlistsbrowser_size_ = 1416 1025
 browser_searchbar_maximized = 0
 browser_searchbar_position = 0 18
-browser_searchbar_size_ = 1916 1041
-column_expands = ~artist~title,1,genre,0,~filename,1,bpm,1
+browser_searchbar_size_ = 1914 1036
+column_expands = genre,0,~artist~title,0,bpm,0,album,0,~dirname,1
 	
-column_widths = ~artist~title,231,genre,250,~filename,625,bpm,-1
+column_widths = genre,226,~artist~title,548,bpm,111,album,181,~dirname,-1
 	
 exfalso_maximized = 0
 exfalso_position = 560 34
@@ -200,13 +199,13 @@ open_browsers =
 order = inorder
 order_shuffle = shuffle
 plugin_prefs_maximized = 0
-plugin_prefs_position = 254 144
+plugin_prefs_position = 390 249
 plugin_prefs_size_ = 714 625
-plugin_selection = Shuffle Playlist
-prefs_page = tagging
-queue = True
+plugin_selection = WaveformSeekBar
+prefs_page = library
+queue = False
 queue_expanded = True
-queue_position = 0.529131985731
+queue_position = 0.531839622642
 quodlibet_information_maximized = 0
 quodlibet_information_position = 278 224
 quodlibet_information_size_ = 669 580
@@ -215,20 +214,21 @@ quodlibet_maximized = 0
 quodlibet_position = 0 18
 quodlibet_properties_maximized = 0
 quodlibet_properties_pos = 0.323373173971
-quodlibet_properties_position = 294 252
+quodlibet_properties_position = 253 248
 quodlibet_properties_size_ = 1506 645
 quodlibet_properties_size_single = 807 429
-quodlibet_size_ = 1914 1036
+quodlibet_size_ = 954 1036
 repeat = False
 repeat_mode = one_song
-seek = 231779
-shuffle = False
+seek = 187066
+shuffle = True
+shuffle_mode = random
 shufflequeue = false
-song = /media/pierre/MUZ/MUZ/NEW/FLAC/VA - Jazz Break The Best Of Contemporary Smooth Jazz (2007) {FLAC} vtwin88cube/14.A Remark You Make.flac
+song = ~/MUZ/MUZ/MP3/ROCK/ALBUMS/Radiohead (discography)/[2001] Amnesiac/08 - Dollars & Cents.mp3
 songlist = True
-sortby = 0~rating
+sortby = 0~artist~title
 	
-volume = 0.061083543347
+volume = 0.0343271579833
 
 [editing]
 alltags = true
