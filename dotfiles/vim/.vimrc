@@ -23,7 +23,8 @@ filetype plugin on " required
 "--------------------------------------------------
 "
 "Get Vim Defaults
-"source /usr/share/vim/vim80/defaults.vim
+unlet! skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
 
 " Clipboard
 set clipboard=unnamedplus
@@ -35,7 +36,7 @@ set clipboard=unnamedplus
 " Search
 :set ignorecase
 
-" netrw (default nerdtree)
+" netrw (default filemanager)
 set nocompatible
 filetype plugin on
 

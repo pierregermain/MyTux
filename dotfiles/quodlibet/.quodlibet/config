@@ -9,7 +9,7 @@ windows = true
 
 [settings]
 bayesian_rating_factor = 0.0
-columns = ~#track,~#bitrate,~#length,~artist~title,artist,album,bpm,genre,~rating
+columns = ~#bitrate,~#length,genre,~artist~title,~rating,bpm,album,~dirname
 	
 default_rating = 0.0
 disable_hints = false
@@ -19,7 +19,7 @@ rating_symbol_blank = ☆
 rating_symbol_full = ★
 ratings = 4
 repeat = False
-scan = /run/media/pierre/MUZ/MUZ/Pierre Germain (VA):/run/media/pierre/MUZ/MUZ/MP3:/run/media/pierre/MUZ/MUZ/FLAC:/run/media/pierre/MUZ/MUZ/RADIO:/run/media/pierre/MUZ/MUZ/LA_MALETA/PACHANGA
+scan = ~/MUZ/MUZ/Pierre Germain (VA):~/MUZ/MUZ/MP3:~/MUZ/MUZ/FLAC:~/MUZ/MUZ/RADIO:~/MUZ/MUZ/LA_MALETA/PACHANGA:~/MUZ/MUZ/NEW/FLAC:~/MUZ/MUZ/NEW/MP3
 search_tags = 
 
 [__config__]
@@ -28,25 +28,27 @@ version = 0
 [plugins]
 active_plugins = CustomCommands
 	FilterAll
-	RemoveID3TLEN
 	filterbrowser
+	ExportMeta
 	follow
 	Remove Playlist Duplicates
 	Browse Folders
 	MusicBrainz lookup
-	track_repeat
+	Random Album Playback
 	AcoustidSearch
-	Regex Substitution
+	ImportMeta
 	refresh-songs
 	Shuffle Playlist
 	Theme Switcher
 	Download Album art
+	WaveformSeekBar
+	Equalizer
 	Browse Files
 	Duplicates
 	musicbrainz-cover
 	Export to HTML
 	queue
-	SeekBar
+	track_repeat
 	Download Album Art
 	Playlist Export
 	Force Write
@@ -80,6 +82,11 @@ icon_modifier_swap = True
 icon_tooltip = <album|<album~discnumber~part~tracknumber~title~version>|<artist~title~version>>
 icon_window_hide = True
 icon_window_visible = true
+lyricswindow_height = 500
+lyricswindow_width = 500
+lyricswindow_x = 1019
+lyricswindow_y = 268
+mpdserver_password = m
 notify_show_notifications = all
 pitch_pitch = 1.0
 pitch_rate = 1.0
@@ -88,9 +95,15 @@ quodlibet.fake.plugins.gajim_status_accounts =
 quodlibet.fake.plugins.gajim_status_pattern = <artist> - <title>
 quodlibet.fake.plugins.gajim_status_paused = True
 quodlibet.fake.plugins.gajim_status_statuses = online chat
+quodlibet.fake.plugins.waveformseekbar_high_res = false
 quodlibet.fake.plugins.wikipedia = en
 quodlibet.fake.plugins.write_cover = /home/pierre/.quodlibet/current.cover
-randomalbum_use_weights = 0
+randomalbum_added = 0.57095709571
+randomalbum_lastplayed = -0.471947194719
+randomalbum_length = 0.267326732673
+randomalbum_playcount = -0.76897689769
+randomalbum_rating = -0.782178217822
+randomalbum_use_weights = 1
 scrobbler_scrobbler_offline = False
 scrobbler_service = Last.fm
 squeezebox_debug = False
@@ -98,7 +111,7 @@ theme switcher_prefer_dark = false
 theme switcher_theme = Mint-X
 titlecase_allow_all_caps = True
 titlecase_human_title_case = True
-track_repeat_play_each = 3
+track_repeat_play_each = 2
 
 [library]
 exclude = 
@@ -125,25 +138,26 @@ underscores = false
 album_covers = true
 album_sort = 2
 album_substrings = true
-albumlist_pos = 0.248234655079
+albumlist_pos = 0.248434237996
 albums = 
 audiofeeds_pos = 0.399782726779
-background = !genre="(NO)"
+background = 
 collection = 9
 collection_headers = ~year 0
-collectionbrowser_pos = 0.273714699493
+collectionbrowser_pos = 0.274008350731
 cover_size = -1
-filesystem = 
-filesystem_pos = 0.132291666667
+covergrid_pos = 0.399770904926
+filesystem = ~/MUZ/MUZ/FLAC
+filesystem_pos = 0.386624869383
 internetradio_pos = 0.39796495195
 mediadevices_pos = 0.398696360674
-pane_selection = 0	(Error)	(error)	(getme)	(Capoeira)	(break) Ea/Synfo	(efectos)	(buyme) H/DnB/Tr/Vc/Classic	(error) D/Vc	(games) Rk/Instr	(games) Jz	(base)	(error) Intro a un concierto	(error) Bt/2x4/Chill/Gr/AcJ	(demasiado corto)	(break)	(games)	(games) Mario Rk/Instr	(games) Mario	(Error ???)	.
+pane_selection = 0	Grunge	.
 pane_wide_mode = true
-panedbrowser_pos = 0.147181628392
+panedbrowser_pos = 0.168058455115
 panes = genre
 playlist = NEM PRESENTACION INICIO
 playlists_pos = 0.277777777778
-playlistsbrowser_pos = 0.156770833333
+playlistsbrowser_pos = 0.156576200418
 query_text = 
 radio = college
 rating_click = true
@@ -160,8 +174,8 @@ round = true
 [memory]
 browser = SearchBar
 browser_filesystem_maximized = 0
-browser_filesystem_position = 0 613
-browser_filesystem_size_ = 1628 446
+browser_filesystem_position = 0 547
+browser_filesystem_size_ = 1914 507
 browser_panedbrowser_maximized = 0
 browser_panedbrowser_position = 0 18
 browser_panedbrowser_size_ = 1429 1041
@@ -172,11 +186,11 @@ browser_playlistsbrowser_maximized = 0
 browser_playlistsbrowser_position = 0 34
 browser_playlistsbrowser_size_ = 1416 1025
 browser_searchbar_maximized = 0
-browser_searchbar_position = 960 18
-browser_searchbar_size_ = 956 1041
-column_expands = ~artist~title,1,artist,1,album,1,bpm,1,genre,1
+browser_searchbar_position = 0 18
+browser_searchbar_size_ = 1914 1036
+column_expands = genre,0,~artist~title,0,bpm,0,album,0,~dirname,1
 	
-column_widths = ~artist~title,224,artist,161,album,195,bpm,-1,genre,145
+column_widths = genre,226,~artist~title,548,bpm,111,album,181,~dirname,-1
 	
 exfalso_maximized = 0
 exfalso_position = 560 34
@@ -185,33 +199,36 @@ open_browsers =
 order = inorder
 order_shuffle = shuffle
 plugin_prefs_maximized = 0
-plugin_prefs_position = 610 262
+plugin_prefs_position = 390 249
 plugin_prefs_size_ = 714 625
-plugin_selection = Automatic library update
-prefs_page = tagging
-queue = True
+plugin_selection = WaveformSeekBar
+prefs_page = library
+queue = False
 queue_expanded = True
-queue_position = 0.605804111245
+queue_position = 0.531839622642
 quodlibet_information_maximized = 0
 quodlibet_information_position = 278 224
-quodlibet_information_size_ = 593 580
-quodlibet_last_active_version = 3.8.1
-quodlibet_maximized = 4
+quodlibet_information_size_ = 669 580
+quodlibet_last_active_version = 3.9.-1
+quodlibet_maximized = 0
 quodlibet_position = 0 18
 quodlibet_properties_maximized = 0
-quodlibet_properties_pos = 0.324137931034
-quodlibet_properties_position = 205 198
+quodlibet_properties_pos = 0.323373173971
+quodlibet_properties_position = 253 248
 quodlibet_properties_size_ = 1506 645
 quodlibet_properties_size_single = 807 429
-quodlibet_size_ = 1916 1041
-seek = 15123
-shuffle = False
-shufflequeue = true
-song = /run/media/pierre/MUZ/MUZ/MP3/HOUSE MINIMAL/Minimal TPB/Mixed/Superlongevity 1 & 2/Superlongevity 1/06 No Milk Today.mp3
+quodlibet_size_ = 954 1036
+repeat = False
+repeat_mode = one_song
+seek = 187066
+shuffle = True
+shuffle_mode = random
+shufflequeue = false
+song = ~/MUZ/MUZ/MP3/ROCK/ALBUMS/Radiohead (discography)/[2001] Amnesiac/08 - Dollars & Cents.mp3
 songlist = True
-sortby = 0genre
+sortby = 0~artist~title
 	
-volume = 0.342995513936
+volume = 0.0343271579833
 
 [editing]
 alltags = true

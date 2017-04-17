@@ -21,11 +21,11 @@ status=`quodlibet --status | sed -e 2d -e "s/^.*\ .*\ \(.\)\.\(.\{2\}\).*/\1\2%/
 
 echo "---------BEGIN----------------------"
 echo $filename
-echo "------------------------------------"
+#echo "------------------------------------"
 echo "artist: $artist"
 echo "title: $title"
-echo "-----------original-----------------"
+#echo "-----------original-----------------"
 echo "length: $length bpm: $bpm rating: $rating"
 echo "status: $status bits: $bitrate"
 echo "genre: $genre"
-echo "-----------END----------------------"
+#echo "-----------END----------------------"
