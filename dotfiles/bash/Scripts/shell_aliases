@@ -13,9 +13,17 @@ alias a='alias'
 alias h='history'
 alias c='clear'
 alias g='grep -i'
-alias ag='alias|grep -i '
 alias r='ranger'
-alias ..='cd ..'
+
+#Colors are nice
+alias ls='ls --color=auto -h'
+alias diff='diff --color'
+alias dmesg='dmesg --color'
+alias grep='grep --color'
+alias grepi='grep -i --color'
+
+#VIM
+alias vi='vim'
 
 #History
 alias historyRecall='echo "!XXX"'
@@ -42,15 +50,6 @@ alias setBackgroundCenter='feh --bg-center'
 alias setBackgroundTile='feh --bg-tile'
 alias setBackgroundLast='sh .fehbg &'
 
-#Colors are nice
-alias ls='ls --color=auto -h'
-alias diff='diff --color'
-alias dmesg='dmesg --color'
-alias grep='grep --color'
-alias grepi='grep -i --color'
-
-#VIM
-alias vi='vim'
 
 #Keyboard
 alias seeKeyboardLayout='onboard'
