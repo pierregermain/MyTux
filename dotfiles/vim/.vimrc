@@ -36,10 +36,21 @@ set clipboard=unnamedplus
 " Search
 :set ignorecase
 
+" Colors
+syntax on
+
 " netrw (default filemanager)
 set nocompatible
 filetype plugin on
 
-" Colors
-syntax on
+" do not put comments in new lines
+au FileType * set formatoptions-=r
+au FileType * set formatoptions-=c
+au FileType * set formatoptions-=o
 
+" Spaces and Tabs (Drupal)
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set autoindent
+set smartindent
