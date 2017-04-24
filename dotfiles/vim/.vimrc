@@ -36,10 +36,50 @@ set clipboard=unnamedplus
 " Search
 :set ignorecase
 
+" Undo
+set undofile " Maintain undo history between sessions
+set undodir=~/.vimundo
+
+" Save read only files with :w!!
+cmap w!! w !sudo tee % >/dev/null
+
 " netrw (default filemanager)
+" Use <C-^>
 set nocompatible
 filetype plugin on
 
 " Colors
 syntax on
 
+" Disable automatic comment insertion
+"autocmd FileType * setlocal formatoptions-=r " Insert Mode
+"autocmd FileType * setlocal formatoptions-=c " Auto-wrap
+autocmd FileType * setlocal formatoptions-=o  " Open Line
+
+"--------------------------------------------------
+"DRUPAL
+"--------------------------------------------------
+
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set autoindent
+set smartindent
+
+if has("autocmd")
+  " Drupal *.module and *.install files.
+  augroup module
+    autocmd BufRead,BufNewFile *.module set filetype=php
+    autocmd BufRead,BufNewFile *.install set filetype=php
+    autocmd BufRead,BufNewFile *.test set filetype=php
+    autocmd BufRead,BufNewFile *.inc set filetype=php
+    autocmd BufRead,BufNewFile *.profile set filetype=php
+    autocmd BufRead,BufNewFile *.view set filetype=php
+  augroup END
+endif
+
+" Omnicomplete (TODO: ctags)
+" Invoke with <C-x> <C-o>
+" <C-p> Previous
+" <C-n> Next
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
