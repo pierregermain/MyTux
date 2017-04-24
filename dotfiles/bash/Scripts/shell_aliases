@@ -19,8 +19,7 @@ alias r='ranger'
 alias ls='ls --color=auto -h'
 alias diff='diff --color'
 alias dmesg='dmesg --color'
-alias grep='grep --color'
-alias grepi='grep -i --color'
+alias grep='grep -i --color'
 
 #VIM
 alias vi='vim'
@@ -109,7 +108,7 @@ alias bluetoothKeyboardReloadKeys='xmodmap .Xmodmap'
 
 alias setWiredNetworkEnable='sudo systemctl enable dhcpcd.service'
 
-alias seeNet='ip route show;echo;iwconfig'
+alias seeNet='ifconfig;ip route show;echo;iwconfig'
 alias seeNetworkDrivers='lspci -vnn | grep 14e4:;echo;echo;ip link;echo;dmesg only | grep Broad'
 alias seeNetctlFiles='cd /etc/netctl;lsByModDate'
 alias seeNetworkRules='cat /etc/udev/rules.d/10-network.rules'
