@@ -163,7 +163,6 @@ assign [class="Filezilla"] 3
 assign [class="Quodlibet"] x
 assign [class="Mixxx"] x
 assign [class="Transmission"] 9
-assign [class="xfdesktop"] 9
 
 #bindsym $Mod+g workspace 8 img
 assign [class="Gimp"] 8
@@ -198,16 +197,10 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 
 # VOLUME ADJUSTMENT
-# With pulseaudio
-#bindsym XF86AudioRaiseVolume exec "/usr/bin/pulseaudio-ctl up && killall -SIGUSR1 i3status" 
-#bindsym XF86AudioLowerVolume exec "/usr/bin/pulseaudio-ctl down && killall -SIGUSR1 i3status"
-#bindsym XF86AudioMute exec "/usr/bin/pulseaudio-ctl mute && killall -SIGUSR1 i3status"
-bindsym XF86AudioMute exec "pactl set-sink-mute 1 toggle && killall -SIGUSR1 i3status"
-
-# Without pulseaudio
-bindsym XF86AudioRaiseVolume exec "amixer -q set Master 2dB+ unmute && killall -SIGUSR1 i3status" 
-bindsym XF86AudioLowerVolume exec "amixer -q set Master 2dB- unmute && killall -SIGUSR1 i3status"
-#bindsym XF86AudioMute exec "amixer -q set Master toggle && killall -SIGUSR1 i3status"
+# With pulseaudio-ctl
+bindsym XF86AudioRaiseVolume exec "/usr/bin/pulseaudio-ctl up && killall -SIGUSR1 i3status" 
+bindsym XF86AudioLowerVolume exec "/usr/bin/pulseaudio-ctl down && killall -SIGUSR1 i3status"
+bindsym XF86AudioMute exec "/usr/bin/pulseaudio-ctl mute && killall -SIGUSR1 i3status"
 
 #Keyboard Brightness
 #exec echo 0 | sudo tee -a /sys/class/leds/smc::kbd_backlight/brightness
@@ -219,10 +212,7 @@ bindsym XF86KbdBrightnessDown exec "kbDown"
 bindsym $mod+XF86KbdBrightnessDown exec "kbDown"
 
 #Apps Launcher
-bindsym XF86LaunchA exec "/home/pierre/.i3/Scripts/winmenu.py"
-bindsym XF86LaunchB exec "quickswitch.py --move"
-bindsym $mod+F10 exec "xfce4-screenshooter"
-bindsym $mod+F11 exec "xfce4-screenshooter --region"
+bindsym $mod+F11 exec "xfce4-screenshooter"
 
 # Alt - Tab
 workspace_auto_back_and_forth no
@@ -242,16 +232,9 @@ workspace 6 output DP-3
 workspace 8 output DP-3
 workspace "x" output DP-3
 
-#Audio Player
-#MOC
-bindsym $mod+XF86AudioPlay exec "mocp --toggle-pause"
-bindsym $mod+XF86AudioNext exec "mocp --next"
-bindsym $mod+XF86AudioPrev exec "mocp --previous"
-bindsym $mod+Mod1+XF86AudioNext exec "mocp -k +10"
-bindsym $mod+Mod1+XF86AudioPrev exec "mocp -k -10"
-
-#QUOD LIBET
-#TODO CALCULAR TIEMPO FICHERO Y A BASE DE ELLO PUES IR AL 30% 50% 75%
+# Audio Player
+# QUOD LIBET
+# TODO CALCULAR TIEMPO FICHERO Y A BASE DE ELLO PUES IR AL 30% 50% 75%
 bindsym $mod+Mod1+grave exec "quodlibet --seek 0:00"
 bindsym $mod+Mod1+0 exec "quodlibet --seek 0:00"
 bindsym $mod+Mod1+1 exec "quodlibet --seek 0:30"
@@ -272,6 +255,14 @@ bindsym $mod+Mod1+Right exec "quodlibet --seek +0:10"
 bindsym $mod+Mod1+Left exec "quodlibet --seek -0:10"
 bindsym $mod+Mod1+Up exec "quodlibet --previous"
 bindsym $mod+Mod1+Down exec "quodlibet --next"
+
+# MOC
+bindsym $mod+XF86AudioPlay exec "mocp --toggle-pause"
+bindsym $mod+XF86AudioNext exec "mocp --next"
+bindsym $mod+XF86AudioPrev exec "mocp --previous"
+bindsym $mod+Mod1+XF86AudioNext exec "mocp -k +10"
+bindsym $mod+Mod1+XF86AudioPrev exec "mocp -k -10"
+
 
 #############
 #APPLE REMOTE

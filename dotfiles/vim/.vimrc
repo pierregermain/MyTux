@@ -43,15 +43,15 @@ set undodir=~/.vimundo
 " Save read only files with :w!!
 cmap w!! w !sudo tee % >/dev/null
 
+" Colors
+syntax on
+
 " netrw (default filemanager)
 " Use <C-^>
 set nocompatible
 filetype plugin on
 
-" Colors
-syntax on
-
-" Disable automatic comment insertion
+" Disable automatic comment insertion in new lines
 "autocmd FileType * setlocal formatoptions-=r " Insert Mode
 "autocmd FileType * setlocal formatoptions-=c " Auto-wrap
 autocmd FileType * setlocal formatoptions-=o  " Open Line
@@ -60,6 +60,7 @@ autocmd FileType * setlocal formatoptions-=o  " Open Line
 "DRUPAL
 "--------------------------------------------------
 
+" Spaces and Tabs (Drupal)
 set expandtab
 set tabstop=2
 set shiftwidth=2

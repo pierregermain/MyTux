@@ -178,6 +178,10 @@ if [ -f /usr/share/autojump/autojump.bash ]; then
   . /usr/share/autojump/autojump.bash
 fi
 
+# Text Editor
+export EDITOR=vim
+export VISUAL=vim
+
 # My Scripts
 export PATH=$PATH:$HOME/Scripts
 export PATH=$PATH:$HOME/Scripts/backup
