@@ -1,7 +1,7 @@
 out_to_x no
 out_to_console yes
 short_units yes
-update_interval 2.1
+update_interval 1.5
 max_text_width 0
 if_up_strictness address
 #use_spacer right
@@ -21,16 +21,16 @@ TEXT
 #Mocp
 {"full_text":"${exec mocp -Q "%artist - %song"|cut -c -40|sed 's/["]//g'}","color":"\#999933","separator":false,"separator_block_width":0},\
 #{"full_text":"${exec mocp -Q " (%tl)"|sed 's/["]//g'}","color":"\#99FF33","separator":false,"separator_block_width":0},\
-#Wifi 1
+# Net
 {"full_text":"|","color":"\#888888","separator":false,"separator_block_width":6},\
-{"full_text":"${if_up wlp3s0}${addr wlp3s0} ${wireless_essid wlp3s0} ${wireless_link_qual_perc wlp3s0}${endif}","color":"\#EEEEEE","separator":false,"separator_block_width":6},\
-{"full_text":"${if_up wlp2s0}${addr wlp2s0} ${wireless_essid wlp2s0} ${wireless_link_qual_perc wlp2s0}${endif}","color":"\#EEEEEE","separator":false,"separator_block_width":6},\
-#Wifi 2
-{"full_text":"${if_up eth0}${addr eth0}${endif}","color":"\#a9db6c","separator":false,"separator_block_width":6},\
 {"full_text":"${if_up wlan0}${addr wlan0} ${wireless_essid wlan0} ${wireless_link_qual_perc wlan0}%${endif}","color":"\#a9db6c","separator":false,"separator_block_width":6},\
+{"full_text":"${if_up wlp2s0}${addr wlp2s0} ${wireless_essid wlp2s0} ${wireless_link_qual_perc wlp2s0}${endif}","color":"\#EEEEEE","separator":false,"separator_block_width":6},\
+{"full_text":"${if_up wlp3s0}${addr wlp3s0} ${wireless_essid wlp3s0} ${wireless_link_qual_perc wlp3s0}${endif}","color":"\#EEEEEE","separator":false,"separator_block_width":6},\
+{"full_text":"${if_up eth0}${addr eth0}${endif}","color":"\#a9db6c","separator":false,"separator_block_width":6},\
+{"full_text":"${if_up enp0s31f6}${addr enp0s31f6}${endif}","color":"\#a9db6c","separator":false,"separator_block_width":6},\
 #Sound
 {"full_text":"|","color":"\#888888","separator":false,"separator_block_width":6},\
-{"full_text":"${exec /usr/bin/pulseaudio-ctl full-status| awk '{print $1 $2 }'|sed 's/.*yes/off/'| sed 's/no//'}","color":"\#bad314","separator":false,"separator_block_width":6},\
+{"full_text":"${exec /usr/bin/pulseaudio-ctl full-status | awk '{print $1 $2 }' | sed -e 's/no/ %/;s/.*yes/ off/'}","color":"\#bad314","separator":false,"separator_block_width":6},\
 #Hard Drives
 {"full_text":"|","color":"\#888888","separator":false,"separator_block_width":6},\
 {"full_text":"${fs_free /}","color":"\#c7b673","separator":false,"separator_block_width":6},\
