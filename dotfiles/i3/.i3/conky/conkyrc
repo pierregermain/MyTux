@@ -30,7 +30,7 @@ TEXT
 {"full_text":"${if_up wlan0}${addr wlan0} ${wireless_essid wlan0} ${wireless_link_qual_perc wlan0}%${endif}","color":"\#a9db6c","separator":false,"separator_block_width":6},\
 #Sound
 {"full_text":"|","color":"\#888888","separator":false,"separator_block_width":6},\
-{"full_text":"${exec /usr/bin/pulseaudio-ctl full-status| awk '{print $1 $2 }'}","color":"\#bad314","separator":false,"separator_block_width":6},\
+{"full_text":"${exec /usr/bin/pulseaudio-ctl full-status| awk '{print $1 $2 }'|sed 's/.*yes/off/'| sed 's/no//'}","color":"\#bad314","separator":false,"separator_block_width":6},\
 #Hard Drives
 {"full_text":"|","color":"\#888888","separator":false,"separator_block_width":6},\
 {"full_text":"${fs_free /}","color":"\#c7b673","separator":false,"separator_block_width":6},\
