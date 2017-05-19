@@ -187,3 +187,4 @@ export PATH=$PATH:$HOME/Scripts
 export PATH=$PATH:$HOME/Scripts/backup
 export PATH=$PATH:$MyData/PIERRE/Scripts
 export PATH=$PATH:$MyData/PIERRE/Scripts/DevOps
+echo "bam!!!";

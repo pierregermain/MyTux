@@ -12,6 +12,10 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " Plugins to be used
 Plugin 'nelsyeung/twig.vim'
+" Markdown toc
+Plugin 'mzlogin/vim-markdown-toc'
+" Nerdtree
+Plugin 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -84,3 +88,30 @@ endif
 " <C-p> Previous
 " <C-n> Next
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+
+" Define Leader Key
+let mapleader = ","
+
+"--------------------------------------------------
+" CHULETA (activated with <Leader-h>
+"--------------------------------------------------
+
+let g:chuletaOpen = 0
+let s:call_chuleta = '<leader>h'
+
+execute "noremap " . s:call_chuleta " :call <SID>call_chuleta()<CR>"
+
+function! s:call_chuleta()
+        wincmd w
+        call <SID>ExpandFilenameAndExecute("vsplit", "~/.vim/chuleta.md")
+endfunction
+
+function! s:ExpandFilenameAndExecute(command, file)
+        if !g:chuletaOpen
+          execute a:command . " " . expand(a:file, ":p")
+          let g:chuletaOpen = 1
+        else
+          execute bufwinnr("~/.vim/chuleta.md") . "wincmd q"
+          let g:chuletaOpen = 0
+        endif
+endfunction
