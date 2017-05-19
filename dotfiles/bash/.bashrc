@@ -128,10 +128,11 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 if [ "$DISPLAY" != "" ] ; then
   # Call X clients
   setxkbmap us -variant altgr-intl
+  xset -b # do not beep
   # URxvt
-  if [ -f ~/.Xresources ]; then
-    xrdb -merge ~/.Xresources
-  fi
+  #if [ -f ~/.Xresources ]; then
+  #  xrdb -merge ~/.Xresources
+  #fi
 fi
 
 # Basename PWD in xfce4-terminal title
@@ -182,8 +183,18 @@ fi
 export EDITOR=vim
 export VISUAL=vim
 
+# TODO: Does this work for i3 ??
+export TERMINAL=termite
+#alias termit=termite
+
+# Do not beep
+if [ $MyMaquina = "archy" ]; then
+  set bell-style none
+fi
+
 # My Scripts
 export PATH=$PATH:$HOME/Scripts
+export PATH=$PATH:/home/pierre/Scripts/convert-files
 export PATH=$PATH:$HOME/Scripts/backup
 export PATH=$PATH:$MyData/PIERRE/Scripts
 export PATH=$PATH:$MyData/PIERRE/Scripts/DevOps

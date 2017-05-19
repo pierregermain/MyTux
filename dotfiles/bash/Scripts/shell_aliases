@@ -80,8 +80,8 @@ alias pacmanPackagesExport='pacman -Qqen > pkglist.txt'
 alias pacmanPackagesImport='pacman -S < pkglist.txt'
 
 alias pacmanPackageInstall='pacman -S'
-alias pacmanPackageRemove='pacman -R'
-alias pacmanPackageRemoveAll='pacman -Rs'
+alias pacmanPackageRemoveSingle='pacman -R'
+alias pacmanPackageRemove='pacman -Rs'
 
 alias pacmanUpdateSystem='sudo pacman -Syu'
 
@@ -404,8 +404,3 @@ alias locateConfig='sudo vim /etc/updatedb.conf'
 function grepRecursiveInFiles () { grep -rl "$1" ./; }
 function grepRecursiveInFilesAndReplace () { grep -rl "$1" ./ | xargs sed -i 's/$2//g'; }
 
-
-# Video
-
-alias handbrakeiPod='handbrake.sh iPod $1'
-alias handbrakeiPad='handbrake.sh iPad $1'
