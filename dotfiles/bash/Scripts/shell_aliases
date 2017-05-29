@@ -18,7 +18,7 @@ alias po='sudo poweroff'
 
 #Colors are nice
 alias ls='ls --color=auto -h'
-alias diff='diff --color'
+alias diff='colordiff'
 alias dmesg='dmesg --color'
 alias grep='grep -i --color'
 
@@ -29,7 +29,8 @@ alias vi='vim'
 alias historyRecall='echo "!XXX"'
 alias historyLast='echo "!!"'
 alias cdBack='cd -'
-alias lastParameter='`!$`'
+alias lastParameter='!$'
+alias doit='sudo !!'
 #autojump
 alias cdMostused='j'
 alias cdSeeMostUsed='autojump -s'
@@ -370,11 +371,12 @@ alias seeApplicationsMenu='cd /usr/share/applications'
 
 #AsciiArt
 alias asciiArt='figlet -c'
-alias asciiFiglet='figlet'
-alias asciiCadubi='cadubi'
+alias asciiArt2='cadubi'
+alias asciiArt3='lolcat'
+alias asciiArt4='toilet'
 
 #Calc
-alias bc='bc -q ~/.bc'
+alias bc='echo "scale=2" > ~/.bc;bc -q ~/.bc'
 
 #Firefox
 alias firefoxDev='firefox -profilemanager'
