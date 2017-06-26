@@ -1,5 +1,8 @@
 # Which is my Leader
-search mapleader in vimrc (by default \, I use ,)
+mapleader in vimrc (\ or ,)
+
+#Reload vimrc
+:so %
 
 #Wrap lines visually
 :set wrap linebreak nolist
@@ -17,7 +20,7 @@ z= | suggest
 
 #Paste
 
-,pp | paste in new line
+:put | paste in new line
 
 "+p | paste clipboard
 "+y | yank to clipboard
@@ -44,17 +47,17 @@ z | position current line
 ''| back
 
 #Windows
-^Wh Go Left
-^Wl Go Right
+^W^h Go Left
+^W^l Go Right
 
-^Wv Split Vertically
-^Wn Split Horizontall
+^W^v Split Vertically
+^W^n Split Horizontall
 
-^Wc Close Window
-^Wo Close Others
+^W^c Close Window
+^W^o Close Others
 
-^WR Go Up
-^Wr Go Down
+^W^R Go Up
+^W^r Go Down
 
 #Search
 
@@ -66,10 +69,10 @@ z | position current line
 #Omnicomplete
 
 <C-x><C-o> Open Onmicomplete
-:pclose    close
+:pclose    close/cerrar
 
 #Php
-:php -l % Check syntax
+:!php -l % Check syntax
 
 #Show whitespace vs tabs
 :syntax on
@@ -84,6 +87,16 @@ g<Ctr-G>
 :set ft=html
 :set ft=phtml
 
+#Tabs
+:tabnew
+:tabclose (close this tab)
+:tabonly (closes other tabs)
+:tabedit % (put buffer in new tab)
+
+gt | go to next tab
+gT | go to prev tab
+
+,tm | :tabmove
 --------
 #PLUGINS
 --------
@@ -111,7 +124,21 @@ vllllS' | visual surround
 #Nerdtree
 
 :NERDTree  | open Nerd Tree
-<C-E> | Toggle Nerd Tree
+:Bookmark  | new bookmark
+B  | show Bookmarks
+cd | update working directory
+C  | make selected directory your parent
+D  | delete Bookmark
+T  | open in new Tab
+t  | open in this Tab
+m  | -> a : New File (New Child Node)
+
+<C-w-w> | Jump between windows
+<Leader-ne> | Toggle Nerd Tree
+
+o  | open or got to open file
+i  | open file horizontal split
+s  | open file vertical split
 
 #Nerdcommenter
 ,cc       | comment
@@ -130,15 +157,6 @@ vllllS' | visual surround
 ,f1 fold all level 1
 ,f9 fold all level 9
 
-#Tabs (plugin)
-,tn | :tabnew
-,tc | :tabclose
-,to | :tabonly
-
-,t, |:tabnext
-,tl | lasttab
-
-,tm | :tabmove
 
 #Select (plugin)
 
