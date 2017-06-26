@@ -159,7 +159,7 @@ popup_during_fullscreen leave_fullscreen
 for_window [title="Volume Control"] floating enable
 
 # assing program to a specific workspace
-assign [class="Filezilla"] 3
+#assign [class="Filezilla"] 3
 assign [class="Quodlibet"] x
 assign [class="Mixxx"] x
 assign [class="Transmission"] 9
