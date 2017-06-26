@@ -50,15 +50,33 @@ cmap w!! w !sudo tee % >/dev/null
 " Colors
 syntax on
 
-" netrw (default filemanager)
-" Use <C-^>
-set nocompatible
-filetype plugin on
+" Linenumbers
+set relativenumber
+set number
 
 " Disable automatic comment insertion in new lines
 "autocmd FileType * setlocal formatoptions-=r " Insert Mode
 "autocmd FileType * setlocal formatoptions-=c " Auto-wrap
 autocmd FileType * setlocal formatoptions-=o  " Open Line
+
+"--------------------------------------------------
+" netrw (default filemanager)
+"--------------------------------------------------
+" Use <C-^>
+set nocompatible
+filetype plugin on
+
+"--------------------------------------------------
+" Leader key
+"--------------------------------------------------
+
+" Define Leader Key
+let mapleader = ","
+
+"--------------------------------------------------
+" Nerdtree
+"--------------------------------------------------
+nmap <leader>n :NERDTreeToggle<cr>
 
 "--------------------------------------------------
 "DRUPAL
@@ -89,8 +107,6 @@ endif
 " <C-n> Next
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
-" Define Leader Key
-let mapleader = ","
 
 "--------------------------------------------------
 " CHULETA (activated with <Leader-h>
