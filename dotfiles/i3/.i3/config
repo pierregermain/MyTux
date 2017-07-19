@@ -39,11 +39,9 @@ bindsym $mod+Shift+Return exec urxvt
 # trackpad toggle script
 #bindsym $mod+Shift+Return exec $HOME/Scripts/trackpad-toggle.sh
 
+# xfce panel
 bindsym $mod+Escape exec --no-startup-id xfce4-panel
-bindsym $mod+Shift+Escape exec --no-startup-id xfce4-popup-applicationsmenu
-#bindsym $mod+Shift+d exec --no-startup-id xfce4-popup-applicationsmenu
-#bindsym $mod+Shift+d exec xfce4-popup-directorymenu
-
+bindsym $mod+Shift+Escape exec "killall -9 xfce4-panel"
 
 # kill focused window
 bindsym $mod+q kill
