@@ -11,18 +11,14 @@ case $- in
       *) return;;
 esac
 
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
+#HISTORY RELATED
+HISTSIZE=9999
+HISTFILESIZE=9999
+HISTCONTROL=ignoreboth:erasedups # no duplicate entries
+shopt -s histappend              # append to history file
+export PROMPT_COMMAND="history -a"        # update histfile after every command
 
-# append to the history file, don't overwrite it
-shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
-
-# check the window size after each command and, if necessary,
+# WINDOWS SIZE
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
@@ -191,6 +187,12 @@ export TERMINAL=termite
 if [ $MyMaquina = "archy" ]; then
   set bell-style none
 fi
+
+# INSENSITIVE TERMINAL COMPLETION
+# If ~./inputrc doesn't exist yet, first include the original /etc/inputrc so we don't override it
+if [ ! -a ~/.inputrc ]; then echo '$include /etc/inputrc' > ~/.inputrc; fi
+# Add option to ~/.inputrc to enable case-insensitive tab completion
+echo 'set completion-ignore-case On' >> ~/.inputrc
 
 # My Scripts
 export PATH=$PATH:$HOME/Scripts
