@@ -4,6 +4,8 @@ mapleader in vimrc (\ or ,)
 #Reload vimrc
 :so %
 
+# Info / Status
+:set laststatus=2
 #Wrap lines visually
 :set wrap linebreak nolist
 
@@ -47,17 +49,18 @@ z | position current line
 ''| back
 
 #Windows
-^W^h Go Left
-^W^l Go Right
 
-^W^v Split Vertically
-^W^n Split Horizontall
+^W^v Split Vertically (|)
+^W^n Split Horizontall (-)
 
 ^W^c Close Window
 ^W^o Close Others
 
-^W^R Go Up
-^W^r Go Down
+^W^x Rotate window
+^W^(R|r) Rotate all window
+
+^W^L/H/J/K Go to window
+^w(l|h|j|k) rotate windows
 
 #Search
 
@@ -92,6 +95,7 @@ g<Ctr-G>
 :tabclose (close this tab)
 :tabonly (closes other tabs)
 :tabedit % (put buffer in new tab)
+^W-T | move window to new tab
 
 gt | go to next tab
 gT | go to prev tab
@@ -126,11 +130,14 @@ vllllS' | visual surround
 :NERDTree  | open Nerd Tree
 :Bookmark  | new bookmark
 B  | show Bookmarks
+D  | delete Bookmark
+
 cd | update working directory
 C  | make selected directory your parent
-D  | delete Bookmark
+
 T  | open in new Tab
 t  | open in this Tab
+
 m  | -> a : New File (New Child Node)
 
 <C-w-w> | Jump between windows
