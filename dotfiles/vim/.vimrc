@@ -16,8 +16,8 @@ Plugin 'nelsyeung/twig.vim'
 Plugin 'mzlogin/vim-markdown-toc'
 " Nerdtree
 Plugin 'scrooloose/nerdtree'
-" Statusline
-"Plugin 'vim-airline/vim-airline'
+" Tagbar (sudo apt-get install exuberant-ctags)
+Plugin 'majutsushi/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -69,16 +69,14 @@ set nocompatible
 filetype plugin on
 
 "--------------------------------------------------
-" Leader key
+" Leader key Shortcuts
 "--------------------------------------------------
 
 " Define Leader Key
 let mapleader = ","
 
-"--------------------------------------------------
-" Nerdtree
-"--------------------------------------------------
 nmap <leader>n :NERDTreeToggle<cr>
+nmap <leader>t :TagbarToggle<cr>
 
 "--------------------------------------------------
 "DRUPAL
