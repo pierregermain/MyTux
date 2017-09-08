@@ -370,7 +370,7 @@ alias latexMantainTexFiles='fmtutil --all'
 alias seeApplicationsMenu='cd /usr/share/applications'
 
 #AsciiArt
-alias asciiArt='figlet -c'
+alias asciiArt='figlet -cr -w 130'
 alias asciiArt2='cadubi'
 alias asciiArt3='lolcat'
 alias asciiArt4='toilet'

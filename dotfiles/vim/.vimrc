@@ -76,6 +76,7 @@ filetype plugin on
 let mapleader = ","
 
 nmap <leader>n :NERDTreeToggle<cr>
+nmap <leader>r :NERDTreeFind<cr>
 nmap <leader>t :TagbarToggle<cr>
 
 "--------------------------------------------------
