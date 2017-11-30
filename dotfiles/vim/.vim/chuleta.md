@@ -69,9 +69,10 @@ z | position current line
 :noh     | no highlight
 ,ff      | Display all lines of cursor word
 
-#Omnicomplete
+#Omnicomplete autocomplete
 
 <C-x><C-o> Open Onmicomplete
+  <C-N> and <C-P> to navigate
 :pclose    close/cerrar
 
 #Php
