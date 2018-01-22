@@ -196,6 +196,7 @@ echo 'set completion-ignore-case On' >> ~/.inputrc
 
 # My Scripts
 export PATH=$PATH:$HOME/Scripts
+export PATH=$PATH:$HOME/bin
 export PATH=$PATH:/home/pierre/Scripts/convert-files
 export PATH=$PATH:$HOME/Scripts/backup
 export PATH=$PATH:$MyData/PIERRE/Scripts

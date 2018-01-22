@@ -1,6 +1,10 @@
 "--------------------------------------------------
 ">>> BEGIN VUNDLE
 "--------------------------------------------------
+"
+" Launch vim and run :PluginInstall
+"
+"
 set nocompatible              " be iMproved, required
 filetype off                  " required
 

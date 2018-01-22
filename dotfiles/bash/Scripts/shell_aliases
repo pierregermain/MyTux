@@ -403,4 +403,3 @@ alias locateConfig='sudo vim /etc/updatedb.conf'
 #alias grepRecursiveInFiles='grep -rl $1 ./'
 function grepRecursiveInFiles () { grep -rl "$1" ./; }
 function grepRecursiveInFilesAndReplace () { grep -rl "$1" ./ | xargs sed -i 's/$2//g'; }
-
