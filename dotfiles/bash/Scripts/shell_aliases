@@ -370,7 +370,7 @@ alias latexMantainTexFiles='fmtutil --all'
 alias seeApplicationsMenu='cd /usr/share/applications'
 
 #AsciiArt
-alias asciiArt='figlet -c'
+alias asciiArt='figlet -cr -w 130'
 alias asciiArt2='cadubi'
 alias asciiArt3='lolcat'
 alias asciiArt4='toilet'
@@ -403,4 +403,3 @@ alias locateConfig='sudo vim /etc/updatedb.conf'
 #alias grepRecursiveInFiles='grep -rl $1 ./'
 function grepRecursiveInFiles () { grep -rl "$1" ./; }
 function grepRecursiveInFilesAndReplace () { grep -rl "$1" ./ | xargs sed -i 's/$2//g'; }
-

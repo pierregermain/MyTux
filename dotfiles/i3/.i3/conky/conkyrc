@@ -77,7 +77,7 @@ TEXT
 {"full_text":"${time %a %d %b %Y}","color":"\#EEEEEE","separator":false,"separator_block_width":6},\
 # Time Ext:
 {"full_text":"|","color":"\#888888","separator":false,"separator_block_width":6},\
-{"full_text":"Par ${tztime Europe/Paris %R}","color":"\#EEEEEE","separator":false,"separator_block_width":6},\
+{"full_text":"Mty ${tztime America/Monterrey %R}","color":"\#EEEEEE","separator":false,"separator_block_width":6},\
 # TIME Local:
 {"full_text":"|","color":"\#888888","separator":false,"separator_block_width":6},\
 {"full_text":"${time %R:%S}","color":"\#EEEEEE","separator":false}\
