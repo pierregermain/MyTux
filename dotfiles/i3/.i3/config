@@ -6,6 +6,7 @@ set $mod Mod4
 
 #XFCE (--no-startup-id so that no "clock" icon is present as mouse)
 exec --no-startup-id xfce4-session
+#exec --no-startup-id thunar --daemon
 #exec --no-startup-id xfce4-panel
 #exec --no-startup-id xfce4-power-manager
 

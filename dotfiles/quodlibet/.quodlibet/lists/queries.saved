@@ -72,5 +72,5 @@ EJEMPLO AND
 Bitrate > 300
 &(#(bitrate <=159),#(rating > 0.15))
 BUEN RATING, MALA CALIDAD
-&(genre = !/^Bt\/.*/,genre = !/^\(.*/,genre = !/^Acc\/.*/,genre = !/^H\/.*/,genre = !/^D\/.*/,genre = !/^Tc\/.*/,genre = !/^¬¬.*/,genre = !/^Pc.*/,#(bitrate >=300))
-SIN GENRE
+&(genre = !/^Bt\/.*/,genre = !/^\(.*/,genre = !/^Acc\/.*/,genre = !/^H\/.*/,genre = !/^D\/.*/,genre = !/^Tc\/.*/,genre = !/^¬¬.*/,genre = !/^¬Pc.*/,genre = !/^Pc.*/,#(bitrate >=300))
+sin genre
