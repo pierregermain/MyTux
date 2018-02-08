@@ -3,3 +3,4 @@ dotfiles/ranger/.config/ranger/bookmarks
 dotfiles/ranger/.config/ranger/history
 dotfiles/ranger/.config/ranger/tagged
 dotfiles/vim/.vim/.netrwhist
+dotfiles/vim/.vim/bundle
