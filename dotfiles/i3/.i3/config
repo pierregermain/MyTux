@@ -165,8 +165,8 @@ assign [class="Gimp"] 8
 for_window [title="GIMP Startup"] move workspace 8
 for_window [window_role="gimp-toolbox"] floating disable; layout stacking; move left; resize shrink right 31px or 31 ppt
 
-for_window [title="Desktop"] move workspace x
-for_window [title="Desktop"] floating disable 
+#for_window [title="Desktop"] move workspace x
+#for_window [title="Desktop"] floating disable 
 
 #Shutdown, Reboot, lock Screen
 set $mode_system System: (l) lock i3,(t) logout i3 (e) logout xfce4, (s) suspend and lock, (h) hibernate, (r) reboot, (Shift+s) shutdown
