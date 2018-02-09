@@ -287,7 +287,7 @@ alias gitUndoAdd='git reset'
 export DockerProject='temoa'
 export DockerProjectDomain='temoa.local'
 
-alias dockerRun='docker run --privileged=true -d -t -P -v ~/$DockerProject:/var/www/html:rw --name $DockerProject igasi/drupal7centosbase:latest'
+alias dockerProjectRun='docker run --privileged=true -d -t -P -v ~/$DockerProject:/var/www/html:rw --name $DockerProject igasi/drupal7centosbase:latest'
 
 alias dockerInfo='docker info '
 alias dockerImages='docker images'
@@ -304,7 +304,9 @@ alias dockerSsh="sshpass -p root ssh root@$DockerProjectDomain"
 alias dockerContainersShow='docker ps -a'
 alias dockerContainersSize='docker ps -as'
 alias dockerContainerStop='docker stop'
+alias dockerContainerStopAll='docker stop $(docker ps -a -q)'
 alias dockerContainerRemove='docker rm -f'
+alias dockerContainerRemoveAll='docker rm $(docker ps -a -q)'
 
 alias dockerRemoveImage='docker rmi'
 alias dockerRemoveImageForce='docker rmi -f'
