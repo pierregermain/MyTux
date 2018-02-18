@@ -48,7 +48,10 @@ bindsym $mod+Shift+Escape exec "killall -9 xfce4-panel"
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_extended_run #i3-dmenu-desktop
+# improved
+bindsym $mod+d exec --no-startup-id dmenu_extended_run
+# classic
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+Shift+d exec --no-startup-id synapse
 
 # change focus
@@ -166,8 +169,8 @@ assign [class="Gimp"] 8
 for_window [title="GIMP Startup"] move workspace 8
 for_window [window_role="gimp-toolbox"] floating disable; layout stacking; move left; resize shrink right 31px or 31 ppt
 
-for_window [title="Desktop"] move workspace x
-for_window [title="Desktop"] floating disable 
+#for_window [title="Desktop"] move workspace x
+#for_window [title="Desktop"] floating disable 
 
 #Shutdown, Reboot, lock Screen
 set $mode_system System: (l) lock i3,(t) logout i3 (e) logout xfce4, (s) suspend and lock, (h) hibernate, (r) reboot, (Shift+s) shutdown
@@ -218,6 +221,7 @@ workspace_auto_back_and_forth no
 bindsym $mod+Tab workspace back_and_forth
 
 # Multi Monitor
+# TODO Know which monitor setup is being used
 
 # Dell
 # Internal
@@ -233,19 +237,33 @@ bindsym $mod+Tab workspace back_and_forth
 #workspace 8 output DP-3
 #workspace "x" output DP-3
 
+# Arcmedia Linux Mint
+# Screen 1
+workspace 1 output HDMI1
+workspace 3 output HDMI1
+workspace 5 output HDMI1
+workspace 7 output HDMI1
+workspace 9 output HDMI1
+# Screen 2
+workspace 2 output DP1
+workspace 4 output DP1
+workspace 6 output DP1
+workspace 8 output DP1
+workspace "x" output DP1
+
 # Vmware
 # Screen 1
-workspace 1 output Virtual2
-workspace 3 output Virtual2
-workspace 5 output Virtual2
-workspace 7 output Virtual2
-workspace 9 output Virtual2
+#workspace 1 output Virtual2
+#workspace 3 output Virtual2
+#workspace 5 output Virtual2
+#workspace 7 output Virtual2
+#workspace 9 output Virtual2
 # Screen 2
-workspace 2 output Virtual1
-workspace 4 output Virtual1
-workspace 6 output Virtual1
-workspace 8 output Virtual1
-workspace "x" output Virtual1
+#workspace 2 output Virtual1
+#workspace 4 output Virtual1
+#workspace 6 output Virtual1
+#workspace 8 output Virtual1
+#workspace "x" output Virtual1
 
 # Audio Player
 # QUOD LIBET
