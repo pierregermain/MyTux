@@ -32,8 +32,8 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Shift+Return exec urxvt
+bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Shift+Return exec terminator
 #bindsym $mod+Return exec i3-sensible-terminal
 
 # trackpad toggle script
@@ -105,27 +105,27 @@ bindsym $mod+a focus parent
 bindsym $mod+t focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
+bindsym $mod+1 workspace 1 Chrome
+bindsym $mod+2 workspace 2 Chrome P
+bindsym $mod+3 workspace 3 Firefox
+bindsym $mod+4 workspace 4 Terminal
+bindsym $mod+5 workspace 5 Aux
+bindsym $mod+6 workspace 6 Phpstorm
+bindsym $mod+7 workspace 7 Firefox P
+bindsym $mod+8 workspace 8 Gimp
+bindsym $mod+9 workspace 9 Aux
 bindsym $mod+0 workspace x
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+1 move container to workspace 1 Chrome
+bindsym $mod+Shift+2 move container to workspace 2 Chrome P
+bindsym $mod+Shift+3 move container to workspace 3 Firefox
+bindsym $mod+Shift+4 move container to workspace 4 Terminal
+bindsym $mod+Shift+5 move container to workspace 5 Aux
+bindsym $mod+Shift+6 move container to workspace 6 Phpstorm
+bindsym $mod+Shift+7 move container to workspace 7 Firefox P
+bindsym $mod+Shift+8 move container to workspace 8 Gimp
+bindsym $mod+Shift+9 move container to workspace 9 Aux
 bindsym $mod+Shift+0 move container to workspace x
 
 #Scratchpad
@@ -155,21 +155,26 @@ focus_follows_mouse no
 popup_during_fullscreen leave_fullscreen
 
 #SPECIFIC PROGRAM CONFIGURATION
-#for_window [class="Eclipse" title="^Eclipse( SDK )?$"] floating enable
-#for_window [class="Eclipse" title="Eclipse Platform"] floating enable
+# use i3-get-window-criteria.sh script
+
+for_window [class="Xfdesktop" instance="xfdesktop" title="Desktop"] move workspace x
+for_window [class="Xfdesktop" instance="xfdesktop" title="Desktop"] floating disable 
+
+# pop-ups
+for_window [window_role="pop-up"] floating enable
 for_window [title="Volume Control"] floating enable
 
 # assing program to a specific workspace
+assign [class="Slack"] 1 Chrome
+assign [class="Transmission"] 9 Aux
 assign [class="Quodlibet"] x
 assign [class="Mixxx"] x
-assign [class="Transmission"] 9
+assign [class="Skype"] x
 
-assign [class="Gimp"] 8
-for_window [title="GIMP Startup"] move workspace 8
+assign [class="Gimp"] 8 Gimp
+for_window [title="GIMP Startup"] move workspace 8 Gimp
 for_window [window_role="gimp-toolbox"] floating disable; layout stacking; move left; resize shrink right 31px or 31 ppt
 
-#for_window [title="Desktop"] move workspace x
-#for_window [title="Desktop"] floating disable 
 
 #Shutdown, Reboot, lock Screen
 set $mode_system System: (l) lock i3,(t) logout i3 (e) logout xfce4, (s) suspend and lock, (h) hibernate, (r) reboot, (Shift+s) shutdown
@@ -187,7 +192,6 @@ mode "$mode_system" {
     bindsym Escape mode "default"
     }
 bindsym $mod+F12 mode "$mode_system"
-
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -219,10 +223,12 @@ bindsym $mod+F11 exec "xfce4-screenshooter"
 workspace_auto_back_and_forth no
 bindsym $mod+Tab workspace back_and_forth
 
-# Multi Monitor
+#############################
+# Multi Monitor xrandr/arandr
 # TODO Know which monitor setup is being used
-
-# Dell
+############################
+#
+# Dell m4600
 # Internal
 #workspace 1 output eDP-1
 #workspace 3 output eDP-1
@@ -236,19 +242,19 @@ bindsym $mod+Tab workspace back_and_forth
 #workspace 8 output DP-3
 #workspace "x" output DP-3
 
-# Arcmedia Linux Mint
+# Linux Mint at Work
 # Screen 1
-workspace 1 output HDMI1
-workspace 3 output HDMI1
-workspace 5 output HDMI1
-workspace 7 output HDMI1
-workspace 9 output HDMI1
+workspace "1 Chrome" output DP1
+workspace "3 Firefox" output DP1
+workspace "5 Aux" output DP1
 # Screen 2
-workspace 2 output DP1
-workspace 4 output DP1
-workspace 6 output DP1
-workspace 8 output DP1
-workspace "x" output DP1
+workspace "2 Chrome P" output HDMI2
+workspace "4 Terminal" output HDMI2
+workspace "6 Phpstorm" output HDMI2
+workspace "7 Firefox P" output HDMI2
+workspace "8 Gimp" output HDMI2
+workspace "9 Aux" output HDMI2
+workspace "x" output HDMI2
 
 # Vmware
 # Screen 1
@@ -264,8 +270,10 @@ workspace "x" output DP1
 #workspace 8 output Virtual1
 #workspace "x" output Virtual1
 
+################
 # Audio Player
 # QUOD LIBET
+# ##############
 # TODO CALCULAR TIEMPO FICHERO Y A BASE DE ELLO PUES IR AL 30% 50% 75%
 bindsym $mod+Mod1+grave exec "quodlibet --seek 0:00"
 bindsym $mod+Mod1+0 exec "quodlibet --seek 0:00"
