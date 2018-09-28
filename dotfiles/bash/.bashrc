@@ -60,7 +60,7 @@ if [ "$color_prompt" = yes ]; then
     if [[ ${EUID} == 0 ]] ; then
         PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\h\[\033[01;34m\] \w \$\[\033[00m\] '
     else
-        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w \n\$\[\033[00m\] '
+        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w \$\[\033[00m\] '
         PROMPT_DIRTRIM=3
     fi
 else
@@ -199,6 +199,10 @@ export PATH=$PATH:$HOME/Scripts
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:/home/pierre/Scripts/convert-files
 export PATH=$PATH:$HOME/Scripts/backup
+export PATH=$PATH:$HOME/Scripts/i3
 export PATH=$PATH:$MyData/PIERRE/Scripts
 export PATH=$PATH:$MyData/PIERRE/Scripts/DevOps
-echo "bam!!!";
+
+echo "BAM FE!";
+
+alias PS1="PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\[\033[00m\] \[\033[01;34m\]\w \$\[\033[00m\] '"
