@@ -91,6 +91,9 @@ g<Ctr-G>
 :set ft=html
 :set ft=phtml
 
+# Ident all lines
+gg=G
+
 #Tabs
 :tabnew
 :tabclose (close this tab)
