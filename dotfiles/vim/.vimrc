@@ -84,6 +84,14 @@ nmap <leader>r :NERDTreeFind<cr>
 nmap <leader>t :TagbarToggle<cr>
 
 "--------------------------------------------------
+"NERTREE
+"--------------------------------------------------
+
+" For mouse click in NERDTree
+:set mouse=a
+let g:NERDTreeMouseMode=3 
+
+"--------------------------------------------------
 "DRUPAL
 "--------------------------------------------------
 
