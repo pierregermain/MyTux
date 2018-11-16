@@ -22,6 +22,9 @@ Plugin 'mzlogin/vim-markdown-toc'
 Plugin 'scrooloose/nerdtree'
 " Tagbar (sudo apt-get install exuberant-ctags)
 Plugin 'majutsushi/tagbar'
+" Debugger (sudo apt-get install python3-dev)
+Plugin 'vim-vdebug/vdebug'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
