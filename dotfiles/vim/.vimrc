@@ -48,6 +48,7 @@ set clipboard=unnamedplus
 
 " Search
 :set ignorecase
+:set hlsearch
 
 " Undo
 set undofile " Maintain undo history between sessions
