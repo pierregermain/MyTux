@@ -84,7 +84,7 @@ alias pacmanPackageRemoveSingle='pacman -R'
 alias pacmanPackageRemove='pacman -Rs'
 
 alias pacmanUpdateSystem='sudo pacman -Syu'
-
+alias pacmanUpdatePGP='sudo pacman -S archlinux-keyring; sudo pacman-key --init; sudo pacman-key --populate archlinux' 
 # Old Commands
 alias pacmanListPackages='pacman -Q'
 alias pacmanRefreshAfterUpdateMirrors='sudo pacman -Syy'

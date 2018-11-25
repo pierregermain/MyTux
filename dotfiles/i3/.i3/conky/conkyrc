@@ -6,21 +6,20 @@ max_text_width 0
 if_up_strictness address
 #use_spacer right
 
-TEXT
-#quodlibet --print-playing| sed s/'No song is currently playing.'//
-[\
 #Qudolibet
-{"full_text":"${exec quodlibet --print-playing "<~#bitrate>"|sed s/'No song is currently playing.'//|sed 's/["]//g'}","color":"\#669933","separator":false,"separator_block_width":6},\
-{"full_text":"${exec quodlibet --print-playing "<artist>"|cut -c -50|sed s/'No song is currently playing.'//|sed 's/["]//g'}","color":"\#999933","separator":false,"separator_block_width":6},\
-{"full_text":"${exec quodlibet --print-playing "<title>"|cut -c -50|sed s/'No song is currently playing.'//|sed 's/["]//g'}","color":"\#996633","separator":false,"separator_block_width":6},\
-{"full_text":"${exec quodlibet --print-playing "<~length>"|cut -c -50|sed s/'No song is currently playing.'//|sed 's/["]//g'}","color":"\#669933","separator":false,"separator_block_width":6},\
-{"full_text":"${exec quodlibet --status | sed -e 2d -e "s/^.*\ .*\ \(.\)\.\(.\{2\}\).*/\1\2%/" -e "s/^0*//"}","color":"\#DDDDDD","separator":false,"separator_block_width":6},\
-{"full_text":"${exec quodlibet --print-playing "<genre>"|cut -c -50|sed s/'No song is currently playing.'//|sed 's/["]//g'}","color":"\#999933","separator":false,"separator_block_width":6},\
-{"full_text":"${exec quodlibet --print-playing "<~#bpm>"|cut -c -50|sed s/'No song is currently playing.'//|sed 's/["]//g'}","color":"\#559933","separator":false,"separator_block_width":6},\
-{"full_text":"${exec quodlibet --print-playing "<~#rating>"|sed s/'[.]'//|sed s/'1.00'//|sed s/000//|sed s/025/★/|sed s/050/★★/|sed s/075/★★★/|sed s/100/★★★★/}","color":"\#777777","separator":false,"separator_block_width":6},\
+#{"full_text":"${exec quodlibet --print-playing "<~#bitrate>"|sed s/'No song is currently playing.'//|sed 's/["]//g'}","color":"\#669933","separator":false,"separator_block_width":6},\
+#{"full_text":"${exec quodlibet --print-playing "<artist>"|cut -c -50|sed s/'No song is currently playing.'//|sed 's/["]//g'}","color":"\#999933","separator":false,"separator_block_width":6},\
+#{"full_text":"${exec quodlibet --print-playing "<title>"|cut -c -50|sed s/'No song is currently playing.'//|sed 's/["]//g'}","color":"\#996633","separator":false,"separator_block_width":6},\
+#{"full_text":"${exec quodlibet --print-playing "<~length>"|cut -c -50|sed s/'No song is currently playing.'//|sed 's/["]//g'}","color":"\#669933","separator":false,"separator_block_width":6},\
+#{"full_text":"${exec quodlibet --status | sed -e 2d -e "s/^.*\ .*\ \(.\)\.\(.\{2\}\).*/\1\2%/" -e "s/^0*//"}","color":"\#DDDDDD","separator":false,"separator_block_width":6},\
+#{"full_text":"${exec quodlibet --print-playing "<genre>"|cut -c -50|sed s/'No song is currently playing.'//|sed 's/["]//g'}","color":"\#999933","separator":false,"separator_block_width":6},\
+#{"full_text":"${exec quodlibet --print-playing "<~#bpm>"|cut -c -50|sed s/'No song is currently playing.'//|sed 's/["]//g'}","color":"\#559933","separator":false,"separator_block_width":6},\
+#{"full_text":"${exec quodlibet --print-playing "<~#rating>"|sed s/'[.]'//|sed s/'1.00'//|sed s/000//|sed s/025/★/|sed s/050/★★/|sed s/075/★★★/|sed s/100/★★★★/}","color":"\#777777","separator":false,"separator_block_width":6},\
 #Mocp
-{"full_text":"${exec mocp -Q "%artist - %song"|cut -c -40|sed 's/["]//g'}","color":"\#999933","separator":false,"separator_block_width":0},\
+#{"full_text":"${exec mocp -Q "%artist - %song"|cut -c -40|sed 's/["]//g'}","color":"\#999933","separator":false,"separator_block_width":0},\
 #{"full_text":"${exec mocp -Q " (%tl)"|sed 's/["]//g'}","color":"\#99FF33","separator":false,"separator_block_width":0},\
+TEXT
+[\
 # Net
 {"full_text":"|","color":"\#888888","separator":false,"separator_block_width":6},\
 {"full_text":"${if_up wlan0}${addr wlan0} ${wireless_essid wlan0} ${wireless_link_qual_perc wlan0}%${endif}","color":"\#a9db6c","separator":false,"separator_block_width":6},\
@@ -33,7 +32,7 @@ TEXT
 {"full_text":"${exec /usr/bin/pulseaudio-ctl full-status | awk '{print $1 $2 }' | sed -e 's/no/ %/;s/.*yes/ off/'}","color":"\#bad314","separator":false,"separator_block_width":6},\
 #Hard Drives
 {"full_text":"|","color":"\#888888","separator":false,"separator_block_width":6},\
-{"full_text":"${fs_free /}","color":"\#c7b673","separator":false,"separator_block_width":6},\
+{"full_text":"rdm ${fs_free /}","color":"\#c7b673","separator":false,"separator_block_width":6},\
 {"full_text":"${if_mounted /home} ${fs_free /home}${endif}","color":"\#c7b673","separator":false,"separator_block_width":6},\
 {"full_text":"${if_mounted /media/pierre/DATA} ${fs_free /media/pierre/DATA}${endif}","color":"\#c7b673","separator":false,"separator_block_width":6},\
 {"full_text":"${if_mounted /run/media/pierre/DATA} ${fs_free /run/media/pierre/DATA}${endif}","color":"\#c7b673","separator":false,"separator_block_width":6},\

@@ -11,7 +11,7 @@ exec --no-startup-id xfce4-session
 #exec --no-startup-id xfce4-power-manager
 
 # Keyboard Layout
-setxkbmap us -variant altgr-intl
+#setxkbmap us -variant altgr-intl
 
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -268,50 +268,50 @@ workspace "x" output DP1
 # Audio Player
 # QUOD LIBET
 # TODO CALCULAR TIEMPO FICHERO Y A BASE DE ELLO PUES IR AL 30% 50% 75%
-bindsym $mod+Mod1+grave exec "quodlibet --seek 0:00"
-bindsym $mod+Mod1+0 exec "quodlibet --seek 0:00"
-bindsym $mod+Mod1+1 exec "quodlibet --seek 0:30"
-bindsym $mod+Mod1+2 exec "quodlibet --seek 1:00"
-bindsym $mod+Mod1+3 exec "quodlibet --seek 1:30"
-bindsym $mod+Mod1+4 exec "quodlibet --seek 2:00"
-bindsym $mod+Mod1+5 exec "quodlibet --seek 2:30"
-bindsym $mod+Mod1+6 exec "quodlibet --seek 3:00"
-bindsym $mod+Mod1+7 exec "quodlibet --seek 5:00"
-bindsym $mod+Mod1+8 exec "quodlibet --seek 7:00"
-bindsym $mod+Mod1+9 exec "quodlibet --seek 9:00"
-
-bindsym XF86AudioPlay exec "quodlibet --play-pause"
-bindsym XF86AudioNext exec "quodlibet --next"
-bindsym XF86AudioPrev exec "quodlibet --previous"
-
-bindsym $mod+Mod1+Right exec "quodlibet --seek +0:10"
-bindsym $mod+Mod1+Left exec "quodlibet --seek -0:10"
-bindsym $mod+Mod1+Up exec "quodlibet --previous"
-bindsym $mod+Mod1+Down exec "quodlibet --next"
-
-# MOC
-bindsym $mod+XF86AudioPlay exec "mocp --toggle-pause"
-bindsym $mod+XF86AudioNext exec "mocp --next"
-bindsym $mod+XF86AudioPrev exec "mocp --previous"
-bindsym $mod+Mod1+XF86AudioNext exec "mocp -k +10"
-bindsym $mod+Mod1+XF86AudioPrev exec "mocp -k -10"
-
+#bindsym $mod+Mod1+grave exec "quodlibet --seek 0:00"
+#bindsym $mod+Mod1+0 exec "quodlibet --seek 0:00"
+#bindsym $mod+Mod1+1 exec "quodlibet --seek 0:30"
+#bindsym $mod+Mod1+2 exec "quodlibet --seek 1:00"
+#bindsym $mod+Mod1+3 exec "quodlibet --seek 1:30"
+#bindsym $mod+Mod1+4 exec "quodlibet --seek 2:00"
+#bindsym $mod+Mod1+5 exec "quodlibet --seek 2:30"
+#bindsym $mod+Mod1+6 exec "quodlibet --seek 3:00"
+#bindsym $mod+Mod1+7 exec "quodlibet --seek 5:00"
+#bindsym $mod+Mod1+8 exec "quodlibet --seek 7:00"
+#bindsym $mod+Mod1+9 exec "quodlibet --seek 9:00"
+#
+#bindsym XF86AudioPlay exec "quodlibet --play-pause"
+#bindsym XF86AudioNext exec "quodlibet --next"
+#bindsym XF86AudioPrev exec "quodlibet --previous"
+#
+#bindsym $mod+Mod1+Right exec "quodlibet --seek +0:10"
+#bindsym $mod+Mod1+Left exec "quodlibet --seek -0:10"
+#bindsym $mod+Mod1+Up exec "quodlibet --previous"
+#bindsym $mod+Mod1+Down exec "quodlibet --next"
+#
+## MOC
+#bindsym $mod+XF86AudioPlay exec "mocp --toggle-pause"
+#bindsym $mod+XF86AudioNext exec "mocp --next"
+#bindsym $mod+XF86AudioPrev exec "mocp --previous"
+#bindsym $mod+Mod1+XF86AudioNext exec "mocp -k +10"
+#bindsym $mod+Mod1+XF86AudioPrev exec "mocp -k -10"
+#
 
 #############
 #APPLE REMOTE
 #############
 
 #Moc with Remote from Apple
-mode "Moc" {
-  bindsym Escape mode "default"
-  bindsym --release XF86MenuKB mode "default"
-
-  bindsym --release XF86Forward exec "mocp --next"
-  bindsym --release XF86Back exec "mocp --previous"
-  bindsym XF86AudioPlay exec "mocp --toggle-pause"
-  bindsym XF86AudioRaiseVolume exec "/usr/bin/pulseaudio-ctl up"
-  bindsym XF86AudioLowerVolume exec "/usr/bin/pulseaudio-ctl down"
-}
+#mode "Moc" {
+#  bindsym Escape mode "default"
+#  bindsym --release XF86MenuKB mode "default"
+#
+#  bindsym --release XF86Forward exec "mocp --next"
+#  bindsym --release XF86Back exec "mocp --previous"
+#  bindsym XF86AudioPlay exec "mocp --toggle-pause"
+#  bindsym XF86AudioRaiseVolume exec "/usr/bin/pulseaudio-ctl up"
+#  bindsym XF86AudioLowerVolume exec "/usr/bin/pulseaudio-ctl down"
+#}
 
 
 #VLC with Remote from Apple
