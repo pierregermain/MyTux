@@ -6,8 +6,8 @@
 #. $HOME/Scripts/z/z.sh
 
 #Lazy
-alias o='open'
-alias o.='open . &'
+alias o='xdg-open'
+alias o.='xdg-open . &'
 alias q='exit'
 alias a='alias'
 alias h='history'
@@ -28,12 +28,12 @@ alias vi='vim'
 #History
 alias historyRecall='echo "!XXX"'
 alias historyLast='echo "!!"'
-alias cdBack='cd -'
-alias lastParameter='!$'
-alias doit='sudo !!'
+alias historyBack='cd -'
+alias historyLastParameter='!$'
+alias historyDoit='sudo !!'
 #autojump
-alias cdMostused='j'
-alias cdSeeMostUsed='autojump -s'
+alias historySeeMostused='j'
+alias historyMostused='autojump -s'
 
 # Shells
 alias shellsList='chsh -l'
@@ -51,7 +51,6 @@ alias setBackgroundCenter='feh --bg-center'
 alias setBackgroundTile='feh --bg-tile'
 alias setBackgroundLast='sh .fehbg &'
 
-
 #Keyboard
 alias seeKeyboardLayout='onboard'
 alias seeKeyboardBindingsX11='xev'
@@ -66,7 +65,7 @@ alias displayS="xrandr --output eDP-1 --brightness +0.4"
 alias displayM="xrandr --output eDP-1 --brightness +0.6"
 alias displayL="xrandr --output eDP-1 --brightness +0.8"
 alias seeDisplayDriver='inxi -G'
-alias seeMonitorValues='xrandr -q;echo;echo "Graphics Card:";lspci | grep VGA'
+alias seeDisplayValues='xrandr -q;echo;echo "Graphics Card:";lspci | grep VGA'
 
 # XORG
 alias sx='startx'
@@ -114,7 +113,7 @@ alias seeNet='ifconfig;ip route show;echo;iwconfig'
 alias seeNetworkDrivers='lspci -vnn | grep 14e4:;echo;echo;ip link;echo;dmesg only | grep Broad'
 alias seeNetctlFiles='cd /etc/netctl;lsByModDate'
 alias seeNetworkRules='cat /etc/udev/rules.d/10-network.rules'
-alias netScan='sudo zenmap'
+alias seeNetScan='sudo zenmap'
 
 alias netctlStartProfile='sudo netctl start'
 alias netctlStatusProfile='netctl status'
@@ -129,8 +128,8 @@ alias wifiDriver='iw dev'
 
 alias seeWifiInterfaces='iwconfig'
 
-alias firewallList='sudo ufw app list'
-alias firewallInfo='sudo ufw app info $1'
+alias seeFirewallList='sudo ufw app list'
+alias seeFirewallInfo='sudo ufw app info $1'
 alias firewallAllowIn='sudo ufw allow in $1'
 
 alias w='w;echo;who -u'
@@ -225,11 +224,10 @@ alias createSymbLink_FileToLinkTo_NameIt='ln -s'
 #List Files
 alias lsByModDate='ls -tlar -h'
 alias lsByModDateDesc='ls -tal -h'
-alias lsTree='tree -a'
+alias lsTree='tree -a -L 3'
 alias seeSizeFolders="sudo du -ks * | sort -nr | cut -f2 | xargs -d '\n' sudo du -sh"
 alias seeSizeFoldersAlsoHidden="du -sch .[!.]* * |sort -h"
 alias lsOneColumn="ls -1"
-
 
 #PARTITIONS
 #alias diffFoldersFast='diff <(cd $0 && find . | sort) <(cd $1 && find . | sort)'
@@ -275,11 +273,11 @@ alias rmLasModifiedFileFromDir='echo "removing ...";ls -t|head -n1;rm `ls -t|hea
 #####
 
 #Sass
-alias sassCompile='cd assets;sass --watch sass:css'
+alias sassCompile='sass --watch sass:css'
 
 # Git and co.
 alias gitAddSshAgent='eval "(ssh-agent -s)";ssh-add ~/.ssh/id_rsa'
-alias gitDiffAdded='git diff --cached'
+alias gitDiffAdded='git show HEAD'
 alias gitPwd='git config --global credential.helper "cache --timeout=36000"; echo "Git will not ask for pwd for 10 hours"'
 
 # Docker

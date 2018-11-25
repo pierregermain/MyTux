@@ -1,4 +1,5 @@
 *.swp
+*.swo
 dotfiles/ranger/.config/ranger/bookmarks
 dotfiles/ranger/.config/ranger/history
 dotfiles/ranger/.config/ranger/tagged

@@ -22,6 +22,9 @@ Plugin 'mzlogin/vim-markdown-toc'
 Plugin 'scrooloose/nerdtree'
 " Tagbar (sudo apt-get install exuberant-ctags)
 Plugin 'majutsushi/tagbar'
+" Debugger (sudo apt-get install python3-dev)
+Plugin 'vim-vdebug/vdebug'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -45,6 +48,7 @@ set clipboard=unnamedplus
 
 " Search
 :set ignorecase
+:set hlsearch
 
 " Undo
 set undofile " Maintain undo history between sessions
@@ -82,6 +86,14 @@ let mapleader = ","
 nmap <leader>n :NERDTreeToggle<cr>
 nmap <leader>r :NERDTreeFind<cr>
 nmap <leader>t :TagbarToggle<cr>
+
+"--------------------------------------------------
+"NERTREE
+"--------------------------------------------------
+
+" For mouse click in NERDTree
+:set mouse=a
+let g:NERDTreeMouseMode=3 
 
 "--------------------------------------------------
 "DRUPAL
