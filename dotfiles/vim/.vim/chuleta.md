@@ -108,6 +108,15 @@ gT | go to prev tab
 --------
 #PLUGINS
 --------
+#Debug
+f2 step in
+f3 step over
+f4 step out
+f5 run and debug
+f6 stop and close
+f7 detach
+f9 debug to cursor
+f10 set breakpoint
 
 #PHP PIV
 K | PHP Documentation
