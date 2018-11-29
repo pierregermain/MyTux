@@ -1,24 +1,22 @@
-# Mis Ficheros Ocultos
+# My Hidden Dotfiles
 
-Después de muchos intentos de sincronizar mis dotfiles entre computadoras, este es el sistema que mas me esta gustando por ahora por lo simple que es.
+I use stow to sync my dotfiles.
 
-Más info en:
- - Liga con [ejemplos](https://dotfiles.github.io/)
- - Uso de dotfiles con stow:
-    - usuario [xero](http://code.xero.nu/dotfiles)
-    - usuario [cdwilson](https://github.com/cdwilson/home)
-    - blog de [invergo](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html)
+More info at:
+ - [Examples](https://dotfiles.github.io/)
+ - Using stow:
+    - user [xero](http://code.xero.nu/dotfiles)
+    - user [cdwilson](https://github.com/cdwilson/home)
+    - blog  [invergo](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html)
  - Uso de [python](https://github.com/sapegin/dotfiles/blob/master/sync.py) para copiar links simbólicos 
  
-# Instalación
-
-Necesitamos tener instalado Stow. Dependiendo de tu distro haz:
+# Installing stow
 
 - `sudo pacman -S stow`
 - `sudo apt-get install stow`
 - `brew install stow`
 
-# Cómo Funciona
+# Howto (still in spanish)
 
 El comando `stow` crea enlaces simbólicos por defecto en el directorio padre con respecto al directorio actual.
 
