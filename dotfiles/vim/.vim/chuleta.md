@@ -130,12 +130,13 @@ K | PHP Documentation
 ,,w | end of word forward
 ,,b | back
 
-#Surround
+#Vim Surround
 
 ds"     | delete surround "
 cs])    | change surround ] to )
-cs"<q>  | change surround with <q>txt</q>
-ysW(    | surround word with (
+cs"<q>  | change surround " with <q>txt</q>
+cst"    | change surround tag with "
+ysiw(    | surround in word with (
 vllllS' | visual surround
 
 #Nerdtree
