@@ -20,6 +20,8 @@ Plugin 'nelsyeung/twig.vim'
 Plugin 'mzlogin/vim-markdown-toc'
 " Nerdtree
 Plugin 'scrooloose/nerdtree'
+" Vim Surround
+Plugin 'tpope/vim-surround'
 " Tagbar (sudo apt-get install exuberant-ctags)
 Plugin 'majutsushi/tagbar'
 " Nice Debugger (sudo apt-get install python3-dev)
