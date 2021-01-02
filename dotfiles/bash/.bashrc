@@ -120,7 +120,7 @@ fi
 # PWB
 
 # X configurations
-if [ "$DISPLAY" != "" ] ; then
+#if [ "$DISPLAY" != "" ] ; then
   # Call X clients
   setxkbmap us -variant altgr-intl
   xset -b # do not beep
@@ -128,7 +128,7 @@ if [ "$DISPLAY" != "" ] ; then
   #if [ -f ~/.Xresources ]; then
   #  xrdb -merge ~/.Xresources
   #fi
-fi
+#fi
 
 # Basename PWD in xfce4-terminal title
 #export PROMPT_COMMAND='echo -ne "\033]0; $HOSTNAME: $PWD\007"'
@@ -150,9 +150,9 @@ export MyData=$MyUsbMnt/DATA
 export MyData_Bck=$MyUsbMnt/DATA_Bck
 export MyMuz=$MyUsbMnt/MUZ
 export MyMuz_Bck=$MyUsbMnt/MUZ_Bck
-export MyHome_Bck=$MyUsbMnt/HOME_Bck
-export MyLin_Bck=$MyUsbMnt/LIN_Bck
-export MyLin2_Bck=$MyUsbMnt/LIN2_Bck
+export MyHome_Bck=$MyUsbMnt/HOME_Bck1
+export MyLin_Bck=$MyUsbMnt/Lin_Bck
+export MyLin2_Bck=$MyUsbMnt/Lin2_Bck
 
 # My Aliases
 if [ -f ~/Scripts/shell_aliases ]; then
@@ -163,6 +163,9 @@ if [ -f $HOME/PIERRE/Scripts/shell_aliases ]; then
 fi
 if [ -f $HOME/Scripts/shell_aliases_music ]; then
   . $HOME/Scripts/shell_aliases_music
+fi
+if [ -f $HOME/PIERRE/Scripts/path_aliases ]; then
+  . $HOME/PIERRE/Scripts/path_aliases
 fi
 
 # Autojump
@@ -195,14 +198,16 @@ echo 'set completion-ignore-case On' >> ~/.inputrc
 
 
 # My Scripts
+export PATH=$PATH:$HOME/DATA/PIERRE/Scripts
+export PATH=$PATH:$HOME/DATA/PIERRE/Scripts/DevOps
 export PATH=$PATH:$HOME/Scripts
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:/home/pierre/Scripts/convert-files
 export PATH=$PATH:$HOME/Scripts/backup
 export PATH=$PATH:$HOME/Scripts/i3
-export PATH=$PATH:$MyData/PIERRE/Scripts
-export PATH=$PATH:$MyData/PIERRE/Scripts/DevOps
-
-echo "BAM FE!";
 
 alias PS1="PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\[\033[00m\] \[\033[01;34m\]\w \$\[\033[00m\] '"
+
+export XDG_DATA_HOME=/home/pierre/.local/share/
+
+source $HOME/Scripts/oneclick

@@ -4,6 +4,9 @@ mapleader in vimrc (\ or ,)
 #Reload vimrc
 :so %
 
+# Redraw
+CTRL+L
+
 # Info / Status
 :set laststatus=2
 #Wrap lines visually
@@ -104,7 +107,8 @@ gg=G
 gt | go to next tab
 gT | go to prev tab
 
-,tm | :tabmove
+:tabm | move tab
+
 --------
 #PLUGINS
 --------
@@ -136,7 +140,7 @@ ds"     | delete surround "
 cs])    | change surround ] to )
 cs"<q>  | change surround " with <q>txt</q>
 cst"    | change surround tag with "
-ysiw(    | surround in word with (
+ysiw(   | surround in word with (
 vllllS' | visual surround
 
 #Nerdtree

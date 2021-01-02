@@ -1,11 +1,13 @@
 out_to_x no
 out_to_console yes
 short_units yes
-update_interval 1.5
+update_interval 10
 max_text_width 0
 if_up_strictness address
 #use_spacer right
 
+TEXT
+[\
 #Qudolibet
 #{"full_text":"${exec quodlibet --print-playing "<~#bitrate>"|sed s/'No song is currently playing.'//|sed 's/["]//g'}","color":"\#669933","separator":false,"separator_block_width":6},\
 #{"full_text":"${exec quodlibet --print-playing "<artist>"|cut -c -50|sed s/'No song is currently playing.'//|sed 's/["]//g'}","color":"\#999933","separator":false,"separator_block_width":6},\
@@ -18,8 +20,6 @@ if_up_strictness address
 #Mocp
 #{"full_text":"${exec mocp -Q "%artist - %song"|cut -c -40|sed 's/["]//g'}","color":"\#999933","separator":false,"separator_block_width":0},\
 #{"full_text":"${exec mocp -Q " (%tl)"|sed 's/["]//g'}","color":"\#99FF33","separator":false,"separator_block_width":0},\
-TEXT
-[\
 # Net
 {"full_text":"|","color":"\#888888","separator":false,"separator_block_width":6},\
 {"full_text":"${if_up wlan0}${addr wlan0} ${wireless_essid wlan0} ${wireless_link_qual_perc wlan0}%${endif}","color":"\#a9db6c","separator":false,"separator_block_width":6},\
@@ -76,6 +76,7 @@ TEXT
 {"full_text":"${time %a %d %b %Y}","color":"\#EEEEEE","separator":false,"separator_block_width":6},\
 # Time Ext:
 {"full_text":"|","color":"\#888888","separator":false,"separator_block_width":6},\
+{"full_text":"Cu ${tztime America/Havana %R}","color":"\#EEEEEE","separator":false,"separator_block_width":6},\
 {"full_text":"Mty ${tztime America/Monterrey %R}","color":"\#EEEEEE","separator":false,"separator_block_width":6},\
 # TIME Local:
 {"full_text":"|","color":"\#888888","separator":false,"separator_block_width":6},\

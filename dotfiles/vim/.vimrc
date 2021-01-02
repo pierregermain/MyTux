@@ -43,6 +43,8 @@ source $VIMRUNTIME/defaults.vim
 
 " Clipboard
 set clipboard=unnamedplus
+" set clipboard=
+set mouse=r
 "vmap <C-c> "+yi
 "vmap <C-x> "+c
 "vmap <C-v> c<ESC>"+p
@@ -86,7 +88,7 @@ filetype plugin on
 let mapleader = ","
 
 nmap <leader>n :NERDTreeToggle<cr>
-nmap <leader>r :NERDTreeFind<cr>
+nmap <leader>, :NERDTreeFind<cr>
 nmap <leader>t :TagbarToggle<cr>
 
 "--------------------------------------------------
@@ -96,6 +98,8 @@ nmap <leader>t :TagbarToggle<cr>
 " For mouse click in NERDTree
 :set mouse=a
 let g:NERDTreeMouseMode=3 
+" No help line
+let NERDTreeMinimalUI=1
 
 "--------------------------------------------------
 "DRUPAL
