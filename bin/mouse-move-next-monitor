@@ -1,0 +1,35 @@
+#!/bin/bash
+#
+# Move the current mouse cursor to the next monitor.
+#
+# Only works on a horizontal monitor setup.
+# Also works only on one X screen (which is the most common case).
+#
+
+#get mouse position
+mdata=`xdotool getmouselocation`
+echo $mdata
+
+#display width
+w=`xdotool getdisplaygeometry | cut -d" " -f1`
+echo $w
+
+#extract x/y coordinates
+x=`echo "$mdata"|cut -f1 -d' '|cut -d: -f2`
+y=`echo "$mdata"|cut -f2 -d' '|cut -d: -f2`
+
+echo $x
+echo $y
+
+if [[ $x -gt $w ]]
+then
+  x_new=`expr $x - $w`
+else
+  x_new=`expr $x + $w`
+fi
+
+
+# Move the cursor
+xdotool mousemove $x_new $y
+# Do click
+xdotool click 1
